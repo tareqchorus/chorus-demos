@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supporter Profile · Chorus</title>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+  :root {
+    --ink: #0F2436;
+    --muted: #6B7585;
+    --canvas-bg: #0F2436;
+    --canvas-edge: #1A2D43;
+    --card-bg: #FFFFFF;
+    --page: #F4F3F6;
+    --purple: #7C4DE0;
+    --purple-deep: #5B19BE;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px;
+    background: var(--page);
+    font-family: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  .frame {
+    max-width: 920px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(15,36,54,0.04), 0 8px 32px rgba(15,36,54,0.08);
+  }
+  header {
+    padding: 18px 24px 14px;
+    border-bottom: 1px solid #E8ECF0;
+  }
+  .gradient-line {
+    height: 3px;
+    background: linear-gradient(90deg, #7C4DE0 0%, #22C3C3 50%, #C4508A 100%);
+    margin: -18px -24px 14px;
+  }
+  header h1 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 4px 0;
+    letter-spacing: -0.01em;
+  }
+  header .subtitle {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+  .legend-swatch {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin: 0 2px 0 4px;
+    vertical-align: middle;
+  }
+  .swatch-donate { background: #56C271; box-shadow: 0 0 0 1px #FFFFFF; }
+  .swatch-sign { background: #C4508A; box-shadow: 0 0 0 1px #22C3C3; }
+  .swatch-click { background: #22C3C3; box-shadow: 0 0 0 1px #7EDDDD; }
+  .swatch-open { background: #E8A64E; }
+  .swatch-send { background: #6B7585; opacity: 0.45; }
+
+  /* Persona row */
+  #carousel {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px;
+    background: #FBFBFC;
+    border-bottom: 1px solid #E8ECF0;
+  }
+  .carousel-btn {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 1px solid #E0E5EB;
+    background: var(--card-bg);
+    color: var(--ink);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .carousel-btn:disabled { opacity: 0.3; cursor: default; }
+  #persona-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .persona-header {
+    display: flex; align-items: center; gap: 8px;
+    flex-wrap: wrap;
+  }
+  .persona-header h2 {
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  .tier-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 4px;
+  }
+  .tier-moderate { background: #DBEAFE; color: #1E40AF; }
+  .persona-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.4;
+    margin: 2px 0 4px 0;
+  }
+  .persona-meta strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .persona-stats {
+    display: flex;
+    gap: 18px;
+    margin-top: 2px;
+    flex-wrap: wrap;
+  }
+  .stat-chip {
+    font-size: 0.78rem;
+    color: var(--ink);
+    padding-left: 7px;
+  }
+  .stat-chip-label { color: var(--muted); font-weight: 500; }
+  .stat-chip-value { font-weight: 700; }
+  .stat-chip-sent     { border-left: 2px solid #8A95A8; }
+  .stat-chip-opened   { border-left: 2px solid #E8A64E; }
+  .stat-chip-clicked  { border-left: 2px solid #22C3C3; }
+  .stat-chip-signed   { border-left: 2px solid #C4508A; }
+  .stat-chip-donated  { border-left: 2px solid #56C271; }
+  .mockup-badge {
+    display: inline-block;
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 3px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+  }
+
+  /* Canvas */
+  #canvas-wrap {
+    background: var(--canvas-bg);
+    position: relative;
+    height: 480px;
+  }
+  #scatter {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  #legend {
+    position: absolute;
+    top: 14px; right: 14px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+  }
+  .legend-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    color: #E0E5EB;
+    font-size: 0.73rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-btn.muted { opacity: 0.35; }
+  .legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .canvas-caption {
+    position: absolute;
+    bottom: 14px; left: 14px;
+    font-size: 0.72rem;
+    color: rgba(224,229,235,0.55);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  footer {
+    background: var(--card-bg);
+    border-top: 1px solid #E8ECF0;
+    padding: 12px 24px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Background grid of faint sent dots */
+  .bg-dot {
+    fill: #6B7585;
+    fill-opacity: 0.18;
+  }
+  .user-dot-send {
+    fill: #6B7585;
+    fill-opacity: 0.55;
+  }
+  .user-dot-open {
+    fill: #E8A64E;
+    fill-opacity: 0.95;
+  }
+  .user-dot-click {
+    fill: #22C3C3;
+    fill-opacity: 0.95;
+    stroke: #7EDDDD;
+    stroke-width: 1;
+  }
+  .user-dot-sign {
+    fill: #C4508A;
+    fill-opacity: 1;
+    stroke: #22C3C3;
+    stroke-width: 1.5;
+  }
+  .user-dot-donate {
+    fill: #56C271;
+    fill-opacity: 1;
+    stroke: #FFFFFF;
+    stroke-width: 1.5;
+  }
+
+  /* Hover-state on user dots */
+  #user-dots circle {
+    cursor: pointer;
+    transition: filter 0.1s ease, r 0.1s ease;
+  }
+  #user-dots circle:hover {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.85));
+  }
+
+  /* HTML tooltip (cursor-following) */
+  #tooltip {
+    position: fixed;
+    pointer-events: none;
+    z-index: 100;
+    background: rgba(14, 16, 20, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 0.82rem;
+    padding: 9px 12px;
+    max-width: 320px;
+    line-height: 1.45;
+    display: none;
+    font-family: 'Inter Display', 'Inter', sans-serif;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  }
+  #tooltip .tt-subject {
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+  #tooltip .tt-meta {
+    font-size: 0.73rem;
+    color: #A0AABB;
+  }
+
+  /* Topic cluster labels */
+  .cluster-label {
+    fill: rgba(224,229,235,0.32);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-family: 'Inter Display', 'Inter', sans-serif;
+  }
+  .cluster-label.preferred {
+    fill: rgba(196,80,138,0.6);
+  }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <header>
+    <div class="gradient-line"></div>
+    <h1>Audience Intelligence — Supporter Profile <span class="mockup-badge">Illustrative mockup · Not real data</span></h1>
+    <p class="subtitle">
+      Faint dots are individual emails on your content map. Colored dots are this supporter's inbox.
+      <span class="legend-swatch swatch-donate"></span>donated
+      ·
+      <span class="legend-swatch swatch-sign"></span>signed
+      ·
+      <span class="legend-swatch swatch-click"></span>clicked
+      ·
+      <span class="legend-swatch swatch-open"></span>opened
+      ·
+      <span class="legend-swatch swatch-send"></span>sent.
+    </p>
+  </header>
+
+  <div id="carousel">
+    <div id="persona-card">
+      <div class="persona-header">
+        <h2>S-1</h2>
+        <span class="tier-badge tier-moderate">moderate</span>
+      </div>
+      <p class="persona-meta">
+        <strong>Preferred:</strong> Ocean Protection · Public Lands · Endangered Species
+        &nbsp;·&nbsp;
+        <strong>Considered:</strong> Climate Litigation
+      </p>
+      <p class="persona-meta">
+        <strong>Style + tone:</strong> Responds to anger · Opposition framing · Formal voice · Longer subject lines
+      </p>
+      <div class="persona-stats">
+        <span class="stat-chip stat-chip-sent">
+          <span class="stat-chip-label">sent</span>&nbsp;<span class="stat-chip-value">102</span>
+        </span>
+        <span class="stat-chip stat-chip-opened">
+          <span class="stat-chip-label">opened</span>&nbsp;<span class="stat-chip-value">41</span>
+        </span>
+        <span class="stat-chip stat-chip-clicked">
+          <span class="stat-chip-label">clicked</span>&nbsp;<span class="stat-chip-value">18</span>
+        </span>
+        <span class="stat-chip stat-chip-signed">
+          <span class="stat-chip-label">signed</span>&nbsp;<span class="stat-chip-value">8</span>
+        </span>
+        <span class="stat-chip stat-chip-donated">
+          <span class="stat-chip-label">donated</span>&nbsp;<span class="stat-chip-value">2 · $95</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <section id="canvas-wrap">
+    <svg id="scatter" viewBox="0 0 920 480" preserveAspectRatio="xMidYMid slice">
+      <!-- Topic cluster labels -->
+      <text x="180" y="80" class="cluster-label preferred">OCEAN PROTECTION</text>
+      <text x="120" y="240" class="cluster-label preferred">PUBLIC LANDS</text>
+      <text x="280" y="380" class="cluster-label preferred">ENDANGERED SPECIES</text>
+      <text x="540" y="120" class="cluster-label">CLIMATE LITIGATION</text>
+      <text x="700" y="220" class="cluster-label">ENVIRONMENTAL JUSTICE</text>
+      <text x="640" y="380" class="cluster-label">CLEAN AIR</text>
+      <text x="800" y="80" class="cluster-label">CLIMATE TRANSPORT</text>
+
+      <!-- Background sent dots (population, faint) -->
+      <g id="bg-dots">
+        <circle class="bg-dot" cx="210" cy="105" r="2.5"/>
+        <circle class="bg-dot" cx="160" cy="135" r="2.5"/>
+        <circle class="bg-dot" cx="240" cy="120" r="2.5"/>
+        <circle class="bg-dot" cx="180" cy="160" r="2.5"/>
+        <circle class="bg-dot" cx="220" cy="155" r="2.5"/>
+        <circle class="bg-dot" cx="200" cy="180" r="2.5"/>
+        <circle class="bg-dot" cx="260" cy="100" r="2.5"/>
+        <circle class="bg-dot" cx="140" cy="105" r="2.5"/>
+        <circle class="bg-dot" cx="190" cy="200" r="2.5"/>
+        <circle class="bg-dot" cx="240" cy="180" r="2.5"/>
+
+        <circle class="bg-dot" cx="120" cy="280" r="2.5"/>
+        <circle class="bg-dot" cx="100" cy="260" r="2.5"/>
+        <circle class="bg-dot" cx="160" cy="290" r="2.5"/>
+        <circle class="bg-dot" cx="180" cy="260" r="2.5"/>
+        <circle class="bg-dot" cx="140" cy="320" r="2.5"/>
+        <circle class="bg-dot" cx="100" cy="305" r="2.5"/>
+
+        <circle class="bg-dot" cx="290" cy="400" r="2.5"/>
+        <circle class="bg-dot" cx="260" cy="420" r="2.5"/>
+        <circle class="bg-dot" cx="320" cy="395" r="2.5"/>
+        <circle class="bg-dot" cx="280" cy="370" r="2.5"/>
+        <circle class="bg-dot" cx="340" cy="425" r="2.5"/>
+        <circle class="bg-dot" cx="240" cy="405" r="2.5"/>
+
+        <circle class="bg-dot" cx="560" cy="140" r="2.5"/>
+        <circle class="bg-dot" cx="600" cy="160" r="2.5"/>
+        <circle class="bg-dot" cx="540" cy="180" r="2.5"/>
+        <circle class="bg-dot" cx="510" cy="135" r="2.5"/>
+        <circle class="bg-dot" cx="580" cy="195" r="2.5"/>
+        <circle class="bg-dot" cx="620" cy="140" r="2.5"/>
+
+        <circle class="bg-dot" cx="700" cy="240" r="2.5"/>
+        <circle class="bg-dot" cx="730" cy="260" r="2.5"/>
+        <circle class="bg-dot" cx="680" cy="270" r="2.5"/>
+        <circle class="bg-dot" cx="755" cy="225" r="2.5"/>
+        <circle class="bg-dot" cx="710" cy="290" r="2.5"/>
+
+        <circle class="bg-dot" cx="660" cy="395" r="2.5"/>
+        <circle class="bg-dot" cx="680" cy="420" r="2.5"/>
+        <circle class="bg-dot" cx="630" cy="410" r="2.5"/>
+        <circle class="bg-dot" cx="700" cy="385" r="2.5"/>
+
+        <circle class="bg-dot" cx="800" cy="100" r="2.5"/>
+        <circle class="bg-dot" cx="830" cy="115" r="2.5"/>
+        <circle class="bg-dot" cx="780" cy="130" r="2.5"/>
+        <circle class="bg-dot" cx="820" cy="80" r="2.5"/>
+      </g>
+
+      <!-- Supporter's inbox: this user's actual emails colored by event -->
+      <g id="user-dots">
+
+        <g data-cluster="ocean">
+          <circle class="user-dot-donate" cx="200" cy="125" r="5"/>
+          <circle class="user-dot-donate" cx="225" cy="155" r="5"/>
+          <circle class="user-dot-sign" cx="195" cy="115" r="4.5"/>
+          <circle class="user-dot-sign" cx="170" cy="145" r="4.5"/>
+          <circle class="user-dot-sign" cx="240" cy="100" r="4.5"/>
+          <circle class="user-dot-click" cx="210" cy="155" r="4"/>
+          <circle class="user-dot-click" cx="180" cy="175" r="4"/>
+          <circle class="user-dot-click" cx="250" cy="140" r="4"/>
+          <circle class="user-dot-click" cx="200" cy="120" r="4"/>
+          <circle class="user-dot-click" cx="155" cy="115" r="4"/>
+          <circle class="user-dot-open" cx="230" cy="170" r="3.5"/>
+          <circle class="user-dot-open" cx="160" cy="180" r="3.5"/>
+          <circle class="user-dot-open" cx="270" cy="155" r="3.5"/>
+          <circle class="user-dot-open" cx="190" cy="195" r="3.5"/>
+          <circle class="user-dot-open" cx="245" cy="195" r="3.5"/>
+          <circle class="user-dot-send" cx="135" cy="155" r="3"/>
+          <circle class="user-dot-send" cx="280" cy="125" r="3"/>
+          <circle class="user-dot-send" cx="215" cy="200" r="3"/>
+        </g>
+
+        <g data-cluster="public-lands">
+          <circle class="user-dot-sign" cx="135" cy="295" r="4.5"/>
+          <circle class="user-dot-click" cx="115" cy="270" r="4"/>
+          <circle class="user-dot-click" cx="155" cy="305" r="4"/>
+          <circle class="user-dot-click" cx="190" cy="265" r="4"/>
+          <circle class="user-dot-open" cx="105" cy="290" r="3.5"/>
+          <circle class="user-dot-open" cx="180" cy="320" r="3.5"/>
+          <circle class="user-dot-open" cx="140" cy="255" r="3.5"/>
+          <circle class="user-dot-send" cx="200" cy="295" r="3"/>
+        </g>
+
+        <g data-cluster="endangered">
+          <circle class="user-dot-click" cx="295" cy="395" r="4"/>
+          <circle class="user-dot-open" cx="270" cy="415" r="3.5"/>
+          <circle class="user-dot-open" cx="320" cy="380" r="3.5"/>
+          <circle class="user-dot-open" cx="285" cy="370" r="3.5"/>
+          <circle class="user-dot-send" cx="345" cy="420" r="3"/>
+        </g>
+
+        <g data-cluster="climate-lit">
+          <circle class="user-dot-open" cx="555" cy="155" r="3.5"/>
+          <circle class="user-dot-open" cx="595" cy="175" r="3.5"/>
+          <circle class="user-dot-send" cx="535" cy="195" r="3"/>
+          <circle class="user-dot-send" cx="610" cy="135" r="3"/>
+        </g>
+
+        <g data-cluster="env-justice">
+          <circle class="user-dot-send" cx="715" cy="255" r="3"/>
+          <circle class="user-dot-send" cx="700" cy="280" r="3"/>
+          <circle class="user-dot-send" cx="745" cy="240" r="3"/>
+        </g>
+
+        <g data-cluster="clean-air">
+          <circle class="user-dot-send" cx="675" cy="405" r="3"/>
+          <circle class="user-dot-send" cx="690" cy="425" r="3"/>
+        </g>
+
+        <g data-cluster="climate-transport">
+          <circle class="user-dot-send" cx="815" cy="95" r="3"/>
+          <circle class="user-dot-send" cx="795" cy="115" r="3"/>
+        </g>
+
+      </g>
+    </svg>
+
+    <div id="legend">
+      <button class="legend-btn">
+        <span class="legend-dot" style="background:#56C271;box-shadow:0 0 0 1px #FFFFFF"></span>donated
+      </button>
+      <button class="legend-btn">
+        <span class="legend-dot" style="background:#C4508A;box-shadow:0 0 0 1px #22C3C3"></span>signed
+      </button>
+      <button class="legend-btn">
+        <span class="legend-dot" style="background:#22C3C3;box-shadow:0 0 0 1px #7EDDDD"></span>clicked
+      </button>
+      <button class="legend-btn">
+        <span class="legend-dot" style="background:#E8A64E"></span>opened
+      </button>
+      <button class="legend-btn muted">
+        <span class="legend-dot" style="background:#6B7585"></span>sent
+      </button>
+    </div>
+
+    <div class="canvas-caption">Each dot is one email. Position = content match.</div>
+  </section>
+
+  <footer>
+    <span>Cadence preference: 2-3 emails/week · Currently safe to send · Email primary, occasional SMS</span>
+    <span>Illustrative mockup · Not based on real customer data</span>
+  </footer>
+
+</div>
+
+<div id="tooltip">
+  <div class="tt-subject"></div>
+  <div class="tt-meta"></div>
+</div>
+
+<script>
+(function() {
+  const subjectsByCluster = {
+    'ocean': [
+      "Match your gift: Defend the Gulf from drilling",
+      "Sign the petition: Stop Trump's Gulf drilling plan",
+      "Defend the Gulf from God Squad ESA exemption",
+      "Tell DOJ: stand with the Gulf lawsuit",
+      "Sign now: block oil rigs from US waters",
+      "We're suing — donate to defend the Gulf",
+      "Help us win in court: Gulf God Squad lawsuit",
+      "Last chance: tell Trump no on offshore drilling",
+      "Sign the petition: back the BBNJ high seas treaty",
+      "Protect marine life — sign now",
+      "Your voice matters: defend our oceans",
+      "The Gulf needs your voice today",
+      "Add your name: protect the high seas",
+      "Defend marine sanctuaries from new drilling",
+      "Petition: stop Gulf wildlife exemptions",
+      "Match a donor today: defend the oceans",
+      "We need 50,000 signatures: defend the Gulf",
+      "Stand with us against the drilling expansion"
+    ],
+    'public-lands': [
+      "Save the Boundary Waters from copper mining",
+      "Tell the House: vote NO on HJR 140",
+      "Defend Boundary Waters before the House vote",
+      "Sign the petition: block the Twin Metals copper mine",
+      "Last chance: stop HJR 140 in the House",
+      "Protect public lands — add your name",
+      "Defend wilderness from extractive industries",
+      "Stop the wilderness raid in Minnesota"
+    ],
+    'endangered': [
+      "Protect endangered wildlife from God Squad exemption",
+      "Stand up for the Endangered Species Act",
+      "Defend the ESA from political exemptions",
+      "Save species threatened by Gulf drilling",
+      "Endangered species need your voice"
+    ],
+    'climate-lit': [
+      "I stand with climate science",
+      "Block EPA's Endangerment Finding repeal",
+      "Defend the legal foundation of climate rules",
+      "16 groups petition EPA on climate"
+    ],
+    'env-justice': [
+      "Demand cleaner air for our communities",
+      "Climate justice for frontline communities",
+      "Defend communities from polluters"
+    ],
+    'clean-air': [
+      "Tell EPA: enforce the mercury rules",
+      "Stop the MATS repeal in the courts"
+    ],
+    'climate-transport': [
+      "California's clean truck bill — add support",
+      "Defend zero-emission vehicle programs"
+    ]
+  };
+
+  const clusterLabels = {
+    'ocean': 'Ocean Protection',
+    'public-lands': 'Public Lands',
+    'endangered': 'Endangered Species',
+    'climate-lit': 'Climate Litigation',
+    'env-justice': 'Environmental Justice',
+    'clean-air': 'Clean Air',
+    'climate-transport': 'Climate Transport'
+  };
+
+  function offsetDate(daysAgo) {
+    const d = new Date('2026-04-28T00:00:00');
+    d.setDate(d.getDate() - daysAgo);
+    return d.toISOString().slice(0, 10);
+  }
+
+  // Assign data deterministically to each user dot
+  const groups = document.querySelectorAll('#user-dots g[data-cluster]');
+  let globalIdx = 0;
+  groups.forEach(group => {
+    const cluster = group.dataset.cluster;
+    const pool = subjectsByCluster[cluster] || [];
+    const label = clusterLabels[cluster] || cluster;
+    group.querySelectorAll('circle').forEach((dot, idx) => {
+      const eventClass = (dot.getAttribute('class') || '').replace('user-dot-', '');
+      dot.dataset.subject = pool[idx % pool.length] || 'Email';
+      dot.dataset.date = offsetDate(globalIdx * 7 + idx * 3 + 4);
+      dot.dataset.event = eventClass;
+      dot.dataset.topic = label;
+      globalIdx++;
+    });
+  });
+
+  const tooltip = document.getElementById('tooltip');
+  const ttSubject = tooltip.querySelector('.tt-subject');
+  const ttMeta = tooltip.querySelector('.tt-meta');
+
+  const userDots = document.querySelector('#user-dots');
+
+  userDots.addEventListener('mouseover', e => {
+    if (e.target.tagName !== 'circle') return;
+    const d = e.target.dataset;
+    if (!d.subject) return;
+    ttSubject.textContent = d.subject;
+    ttMeta.textContent = `${d.date} · ${d.event} · ${d.topic}`;
+    tooltip.style.display = 'block';
+  });
+
+  userDots.addEventListener('mouseout', e => {
+    if (e.target.tagName !== 'circle') return;
+    tooltip.style.display = 'none';
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (tooltip.style.display === 'block') {
+      const x = e.clientX + 14;
+      const y = e.clientY + 14;
+      // Keep tooltip on screen
+      const rect = tooltip.getBoundingClientRect();
+      tooltip.style.left = Math.min(x, window.innerWidth - rect.width - 8) + 'px';
+      tooltip.style.top = Math.min(y, window.innerHeight - rect.height - 8) + 'px';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

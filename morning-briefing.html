@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chorus Daily Brief — April 30, 2026</title>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+  :root {
+    --black: #000000;
+    --ink: #1F2937;
+    --grey: #6D6D6D;
+    --light-grey: #C2C2C2;
+    --purple-1: #9559F1;
+    --purple-2: #5B19BE;
+    --purple-wash: #F5EEFF;
+    --purple-tint: #EDE2FF;
+    --paper: #FFFFFF;
+    --page: #F4F3F6;
+  }
+
+  body {
+    margin: 0;
+    padding: 40px 20px;
+    background: var(--page);
+    font-family: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  .email {
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 40px 44px 52px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04), 0 4px 16px rgba(31, 41, 55, 0.05);
+  }
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--black);
+    margin-bottom: 14px;
+  }
+  .mockup-disclaimer {
+    display: inline-block;
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 18px;
+  }
+  .brand {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .brand .mark {
+    color: var(--purple-1);
+    font-size: 13px;
+    vertical-align: -1px;
+  }
+  .date {
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+  .hello {
+    font-size: 14px;
+    color: var(--grey);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  h1.lede {
+    font-size: 26px;
+    line-height: 1.22;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.022em;
+    color: var(--black);
+  }
+  .synthesis {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .synthesis strong { color: var(--black); font-weight: 600; }
+
+  /* PRIORITIES — top of brief */
+  .priorities {
+    background: var(--paper);
+    border: 2px solid var(--black);
+    padding: 22px 26px;
+    margin: 0 0 36px 0;
+    border-radius: 5px;
+  }
+  .priorities h3 {
+    margin: 0 0 4px 0;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .priorities .priorities-sub {
+    font-size: 12px;
+    color: var(--grey);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .priority-row {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+    padding: 16px 0;
+    border-top: 1px solid var(--page);
+    align-items: baseline;
+    font-size: 14px;
+  }
+  .priority-row:first-of-type { border-top: 1px solid var(--page); padding-top: 16px; }
+  .priority-rank {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--purple-2);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .priority-rank.skip {
+    color: var(--light-grey);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 6px;
+  }
+  .priority-title strong { display: block; font-weight: 600; margin-bottom: 6px; color: var(--black); letter-spacing: -0.005em; font-size: 14.5px; }
+  .priority-title .sub { font-size: 12.5px; color: var(--grey); font-weight: 500; line-height: 1.5; }
+  .priority-title .sub .tag {
+    display: inline-block;
+    color: var(--purple-2);
+    font-weight: 600;
+  }
+  .priority-title .sub .count {
+    display: inline-block;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .priority-cta {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--page);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+  }
+  .priority-cta .cta-helper {
+    font-size: 12px;
+    color: var(--grey);
+    font-weight: 500;
+  }
+  .priority-cta-btn {
+    display: inline-block;
+    background: var(--purple-2);
+    color: var(--paper);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    transition: background 0.15s;
+  }
+  .priority-cta-btn:hover {
+    background: var(--purple-1);
+  }
+
+  .section-rule {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--grey);
+    font-weight: 700;
+    padding: 10px 0;
+    border-top: 1px solid var(--light-grey);
+    margin-top: 32px;
+    margin-bottom: 18px;
+  }
+
+  .cluster {
+    margin-bottom: 32px;
+  }
+
+  .node {
+    margin-bottom: 18px;
+    padding: 18px 20px;
+    background: var(--page);
+    border-left: 3px solid var(--light-grey);
+    border-radius: 4px;
+  }
+  .node.top {
+    border-left-color: var(--purple-2);
+    background: var(--purple-wash);
+  }
+  .node.hot {
+    border-left-color: var(--purple-1);
+    background: var(--purple-wash);
+  }
+  .node-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.35;
+    color: var(--black);
+    letter-spacing: -0.01em;
+  }
+  .node-summary {
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.55;
+  }
+  .chips {
+    font-size: 11px;
+    color: var(--ink);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .chip {
+    background: var(--paper);
+    border: 1px solid var(--light-grey);
+    padding: 4px 9px;
+    border-radius: 3px;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .chip.score-high { background: var(--purple-2); color: var(--paper); border-color: var(--purple-2); font-weight: 600; }
+  .chip.score-med { background: var(--purple-1); color: var(--paper); border-color: var(--purple-1); font-weight: 600; }
+  .chip.score-low { background: var(--light-grey); color: var(--ink); border-color: var(--light-grey); font-weight: 600; }
+  .chip.audience { background: var(--paper); color: var(--purple-2); border-color: var(--purple-2); font-weight: 600; }
+  .chip.velocity-hot::before { content: "▲ "; color: var(--purple-2); }
+  .chip.velocity-accel::before { content: "↗ "; color: var(--purple-1); }
+  .chip.velocity-steady::before { content: "— "; color: var(--grey); }
+  .chip.velocity-cool::before { content: "↘ "; color: var(--grey); }
+
+  .analyst {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    padding-top: 12px;
+    border-top: 1px dashed var(--light-grey);
+    margin-top: 12px;
+  }
+  .analyst::before {
+    content: "Analyst note  ";
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple-2);
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .analyst strong, .analyst em {
+    color: var(--black);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .sources-line {
+    font-size: 11px;
+    color: var(--grey);
+    margin-top: 12px;
+    font-weight: 500;
+  }
+  .sources-line a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--light-grey);
+    text-underline-offset: 2px;
+  }
+  .sources-line a:hover { text-decoration-color: var(--purple-1); color: var(--purple-2); }
+
+  .cross-cluster {
+    background: var(--purple-2);
+    color: var(--paper);
+    padding: 20px 24px;
+    margin: 32px 0;
+    border-radius: 5px;
+  }
+  .cross-cluster .label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--light-grey);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .cross-cluster p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    letter-spacing: -0.005em;
+  }
+  .cross-cluster strong { color: var(--paper); font-weight: 700; }
+
+  .tail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .tail-block h4 {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--grey);
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+  .tail-item {
+    font-size: 13px;
+    margin-bottom: 12px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .tail-item strong { color: var(--black); font-weight: 600; }
+
+  .footer {
+    margin-top: 44px;
+    padding-top: 22px;
+    border-top: 2px solid var(--black);
+    font-size: 11px;
+    color: var(--grey);
+    line-height: 1.7;
+    font-weight: 500;
+  }
+  .footer a { color: var(--purple-2); text-decoration: none; font-weight: 600; }
+  .footer a:hover { text-decoration: underline; }
+  .footer .ask {
+    background: var(--purple-wash);
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    color: var(--ink);
+    font-size: 13px;
+    border-radius: 4px;
+    font-weight: 500;
+    line-height: 1.55;
+  }
+  .footer .ask strong { color: var(--purple-2); font-weight: 600; }
+
+  @media (max-width: 640px) {
+    body { padding: 0; }
+    .email { padding: 26px 22px; border-radius: 0; box-shadow: none; }
+    .tail { grid-template-columns: 1fr; }
+    .priority-row { grid-template-columns: 36px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="email">
+
+  <div class="masthead">
+    <div class="brand"><span class="mark">◆</span> Chorus Daily Brief</div>
+    <div class="date">Thu · Apr 30 · 06:00 ET</div>
+  </div>
+
+  <div class="mockup-disclaimer">Illustrative mockup · Not based on real customer data</div>
+
+  <div class="hello">Good morning, Team —</div>
+
+  <!-- RECOMMENDED SEND STACK — at top -->
+  <div class="priorities">
+    <h3>Recommended send stack · Thursday</h3>
+    <div class="priorities-sub">Three picks today, each routed to a different segment of your list.</div>
+
+    <div class="priority-row">
+      <div class="priority-rank">1</div>
+      <div class="priority-title">
+        <strong>Boundary Waters mobilization petition · public lands</strong>
+        <span class="sub"><span class="tag">Top pick · send today</span> · <span class="count">408,290 supporters matched</span> · story at peak attention; House vote imminent</span>
+      </div>
+    </div>
+
+    <div class="priority-row">
+      <div class="priority-rank">2</div>
+      <div class="priority-title">
+        <strong>Gulf drilling petition · oceans &amp; endangered species</strong>
+        <span class="sub"><span class="tag">Strong #2 · send today</span> · <span class="count">266,189 supporters matched</span> · DOJ response deadline 4 days out; story back in cycle</span>
+      </div>
+    </div>
+
+    <div class="priority-row">
+      <div class="priority-rank">3</div>
+      <div class="priority-title">
+        <strong>MATS mercury rule petition · clean air</strong>
+        <span class="sub"><span class="tag">Narrow match · send today</span> · <span class="count">75,521 supporters matched</span> · Ohio Valley regional coverage spiking</span>
+      </div>
+    </div>
+
+    <div class="priority-row">
+      <div class="priority-rank skip">Skip</div>
+      <div class="priority-title">
+        <strong>Endangerment Finding petition cycle</strong>
+        <span class="sub">Coverage peaked Apr 16, story velocity dropping since. No new procedural beat this week. Re-engage when the news hook returns.</span>
+      </div>
+    </div>
+
+    <div class="priority-cta">
+      <span class="cta-helper">Review, edit, and ship</span>
+      <a href="#" class="priority-cta-btn">Build today's campaigns &rarr;</a>
+    </div>
+  </div>
+
+  <h1 class="lede">Three picks today: Boundary Waters mobilization, Gulf drilling DOJ deadline, MATS mercury suit.</h1>
+
+  <div class="synthesis">
+    Public lands lead today. The <strong>Boundary Waters HJR 140</strong> vote is in front of the House now — story at peak attention, your strongest pick to mobilize. Oceans run #2: your <strong>God Squad lawsuit</strong> response deadline is four days out, putting the story back in cycle. <strong>MATS mercury suit</strong> closes #3 with regional Ohio Valley coverage spiking. Skip the Endangerment Finding cycle — coverage peaked Apr 16, velocity declining.
+  </div>
+
+  <!-- THEME 1: NATURE & WILDLIFE -->
+  <div class="section-rule">Nature &amp; Wildlife · Public lands &amp; oceans · 3 stories</div>
+  <div class="cluster">
+
+    <div class="node top">
+      <div class="node-title">Senate-passed HJR 140 moves to House — Boundary Waters protections at stake</div>
+      <div class="node-summary">After Senate passage Apr 16 stripping Boundary Waters Canoe Area Wilderness protections, the resolution heads to the House. Copper mining at the headwaters of the wilderness is the hook; Twin Metals (Antofagasta subsidiary) is the proximate beneficiary. Movement and outdoor outlets accelerated overnight; mainstream is picking up the framing.</div>
+      <div class="chips">
+        <span class="chip score-high">Opportunity 0.91</span>
+        <span class="chip velocity-hot">62 articles / 18 hrs</span>
+        <span class="chip audience">408K supporters matched</span>
+        <span class="chip">House vote imminent</span>
+      </div>
+      <div class="analyst">
+        Your strongest pick today on both reach and lift. The public-lands + wildlife profile overlap activates a wider slice of your moderate-engagement segments (408K) than the day's other picks, and coverage is in the polarizing-fast-moving pattern that historically drives <em>+1.8x</em> revenue on your list. Source mix tilts toward Outside, High Country News, MPR, regional Minnesota outlets — the geography-and-issue combo that activates your upper Midwest segment hardest. <strong>Send today</strong> — the story is at peak attention right now.
+      </div>
+      <div class="sources-line">
+        62 articles · <a href="#">Outside</a> · <a href="#">High Country News</a> · <a href="#">MPR News</a> · <a href="#">Star Tribune</a> · <a href="#">+ 58 more</a>
+      </div>
+    </div>
+
+    <div class="node hot">
+      <div class="node-title">DOJ response window closing on Gulf God Squad lawsuit</div>
+      <div class="node-summary">Your Apr 2 federal lawsuit challenging Trump-era use of the Endangered Species Committee to exempt Gulf oil/gas activities from the ESA hits its 30-day DOJ response window this week. Press cycle restarting around the procedural deadline; environmental law trade outlets leading.</div>
+      <div class="chips">
+        <span class="chip score-high">Opportunity 0.84</span>
+        <span class="chip velocity-accel">28 articles / 12 hrs</span>
+        <span class="chip audience">266K supporters matched</span>
+        <span class="chip">7-day urgency window</span>
+      </div>
+      <div class="analyst">
+        Strong #2. The oceans-plus-ESA crossover concentrates in your coastal/Gulf-state regional segment — 266K supporters with affinity in either bucket. Your team is the named plaintiff, which gives the strongest possible CTA framing ("the lawsuit you signed is now in court"). <strong>Send today</strong> — the DOJ response deadline is 4 days out, putting the story back in cycle. Regional segment will over-index relative to the broader list.
+      </div>
+      <div class="sources-line">
+        28 articles · <a href="#">E&amp;E News</a> · <a href="#">Reuters Legal</a> · <a href="#">NOLA.com</a> · <a href="#">Houston Chronicle</a> · <a href="#">+ 24 more</a>
+      </div>
+    </div>
+
+    <div class="node">
+      <div class="node-title">BBNJ "high seas" treaty enters into force</div>
+      <div class="node-summary">The Biodiversity Beyond National Jurisdiction Agreement officially came into force this month, creating the first global framework for marine protected areas in international waters (~two-thirds of ocean surface). Coverage is largely scientific and policy press; not breaking on consumer outlets.</div>
+      <div class="chips">
+        <span class="chip score-low">Opportunity 0.46</span>
+        <span class="chip velocity-steady">11 articles / 36 hrs</span>
+        <span class="chip">International · educational</span>
+      </div>
+      <div class="analyst">
+        Not a standalone send today. Worth holding for your oceans-engaged narrow segment as a positive-framing piece later in the week — your audience over-indexes on policy wins, and this is a rare one.
+      </div>
+      <div class="sources-line">
+        11 articles · <a href="#">Mongabay</a> · <a href="#">UN News</a> · <a href="#">Inside Climate News</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- THEME 2: HUMAN HEALTH -->
+  <div class="section-rule">Human Health · Clean air &amp; water · 2 stories</div>
+  <div class="cluster">
+
+    <div class="node hot">
+      <div class="node-title">17-group coalition sues EPA over MATS mercury rule repeal</div>
+      <div class="node-summary">Coalition lawsuit challenges EPA's repeal of the strengthened Mercury and Air Toxics Standards. Brain-damaging mercury, lead, arsenic emissions from coal-fired plants central to filings. Regional outlets in Ohio Valley and Appalachia picking up health-impact angles.</div>
+      <div class="chips">
+        <span class="chip score-high">Opportunity 0.78</span>
+        <span class="chip velocity-accel">19 articles / 14 hrs</span>
+        <span class="chip audience">76K supporters matched</span>
+        <span class="chip">Health · regional mix</span>
+      </div>
+      <div class="analyst">
+        Narrow but strong #3. The clean-air-engaged segment is smaller than oceans or public lands on your list (~89K), but activation on direct-health stories runs ~2.4x your baseline. <strong>Send today</strong> — regional Ohio Valley coverage is spiking, and the segment doesn't overlap with the day's bigger national picks, so it routes to a different slice of the list.
+      </div>
+      <div class="sources-line">
+        19 articles · <a href="#">Bloomberg Environment</a> · <a href="#">Cleveland.com</a> · <a href="#">Pittsburgh Post-Gazette</a> · <a href="#">+ 16 more</a>
+      </div>
+    </div>
+
+    <div class="node">
+      <div class="node-title">17-group NAAQS particulate matter lawsuit filed against EPA</div>
+      <div class="node-summary">Separate suit against EPA for failing to implement the strengthened 2024 NAAQS particulate matter standard. Procedural; won't move on consumer outlets this week.</div>
+      <div class="chips">
+        <span class="chip score-low">Opportunity 0.41</span>
+        <span class="chip velocity-steady">9 articles / 24 hrs</span>
+        <span class="chip">Procedural</span>
+      </div>
+      <div class="analyst">
+        Hold. Your clean-air segment is already on the MATS story; doubling up on EPA-suit narratives in the same week dilutes both.
+      </div>
+      <div class="sources-line">
+        9 articles · <a href="#">Bloomberg Environment</a> · <a href="#">Greenwire</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONNECTED STORIES -->
+  <div class="cross-cluster">
+    <span class="label">Connected stories</span>
+    <p>The <strong>Boundary Waters</strong>, <strong>Gulf God Squad</strong>, and <strong>MATS mercury</strong> stories ladder under the same audience-side narrative your supporters are forming today: <strong>federal protections rolled back, your team pushing back in court</strong>. Each of today's three picks routes to a different segment — total per-supporter email volume stays at one. Supporters who engage with the public-lands story today prime well for the next clean water send when it hits.</p>
+  </div>
+
+  <!-- THEME 3: CLIMATE CHANGE -->
+  <div class="section-rule">Climate Change · Litigation &amp; transportation · 2 stories</div>
+  <div class="cluster">
+
+    <div class="node">
+      <div class="node-title">16-group Endangerment Finding petition filed with EPA</div>
+      <div class="node-summary">Coalition petition outlining flaws in EPA's rule to repeal the Endangerment Finding. Major procedural milestone for climate litigation but already covered last week — coverage is fading.</div>
+      <div class="chips">
+        <span class="chip score-low">Opportunity 0.38</span>
+        <span class="chip velocity-cool">6 articles / 24 hrs</span>
+        <span class="chip">Saturated last week</span>
+      </div>
+      <div class="analyst">
+        Skip. Your environmental-law-engaged segment is fatigued from last week's send cycle on this. Re-engage in 5–7 days when there's a fresh procedural beat.
+      </div>
+      <div class="sources-line">
+        6 articles · <a href="#">E&amp;E News</a> · <a href="#">SCOTUSblog</a>
+      </div>
+    </div>
+
+    <div class="node">
+      <div class="node-title">CA Senate advances zero-emission medium/heavy-duty vehicle bill</div>
+      <div class="node-summary">Sen. Eloise Gómez Reyes' bill to make zero-emission heavy-duty vehicles more affordable for fleet operators clears Environmental Quality Committee unanimously. Mainly trade press; consumer pickup limited so far.</div>
+      <div class="chips">
+        <span class="chip score-low">Opportunity 0.49</span>
+        <span class="chip velocity-steady">14 articles / 28 hrs</span>
+        <span class="chip">CA-specific · narrow</span>
+      </div>
+      <div class="analyst">
+        Narrow geographic match. Hold for your CA-engaged segment as a Friday slot if you're filling more than three sends; otherwise carry through to next week.
+      </div>
+      <div class="sources-line">
+        14 articles · <a href="#">CalMatters</a> · <a href="#">LA Times</a> · <a href="#">SacBee</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WATCH / FADING -->
+  <div class="tail">
+    <div class="tail-block">
+      <h4>Watch</h4>
+      <div class="tail-item"><strong>Microplastics in drinking water</strong> — EPA's first-time recognition (Apr 2) is a slow burn. Worth flagging if science press surfaces a follow-up study this week.</div>
+      <div class="tail-item"><strong>Earth Day 2026 follow-on</strong> — momentum from the "Our Power, Our Planet" framing is still feeding regional coverage. Next breakout could come from a state-level event.</div>
+      <div class="tail-item"><strong>Coal cleanup fund congressional raid</strong> — your Appalachia segment is engaged. If a counter-vote surfaces, this is a strong narrow-match opportunity.</div>
+    </div>
+    <div class="tail-block">
+      <h4>Fading</h4>
+      <div class="tail-item"><strong>Endangerment Finding cycle</strong> — peaked Apr 16. Activation dropping; re-engage with fresh news beat.</div>
+      <div class="tail-item"><strong>Deepwater Horizon anniversary</strong> — coverage cycle closing. Hold the audience for the Gulf God Squad story instead.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="ask"><strong>What's missing from this brief?</strong> What scored too high, too low? Reply and it sharpens tomorrow's picks.</div>
+    <strong>Go deeper</strong> · <a href="#">Open agent</a> — ask "what's heating up in oceans this week" or "why did MATS score 0.78"<br><br>
+    Chorus Daily Brief · Your audience model last updated Apr 29 · <a href="#">Feedback</a> · <a href="#">Settings</a>
+  </div>
+
+</div>
+
+</body>
+</html>
