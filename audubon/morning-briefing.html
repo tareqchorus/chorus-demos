@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Chorus Daily Brief — Audubon — April 30, 2026</title>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+  :root {
+    --black: #000000;
+    --ink: #1F2937;
+    --grey: #6D6D6D;
+    --light-grey: #C2C2C2;
+    --purple-1: #9559F1;
+    --purple-2: #5B19BE;
+    --purple-wash: #F5EEFF;
+    --purple-tint: #EDE2FF;
+    --paper: #FFFFFF;
+    --page: #F4F3F6;
+  }
+
+  body {
+    margin: 0;
+    padding: 40px 20px;
+    background: var(--page);
+    font-family: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  .email {
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 40px 44px 52px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04), 0 4px 16px rgba(31, 41, 55, 0.05);
+  }
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--black);
+    margin-bottom: 14px;
+  }
+  .mockup-disclaimer {
+    display: inline-block;
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 18px;
+  }
+  .brand {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .brand .mark {
+    color: var(--purple-1);
+    font-size: 13px;
+    vertical-align: -1px;
+  }
+  .date {
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+  .hello {
+    font-size: 14px;
+    color: var(--grey);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  h1.lede {
+    font-size: 26px;
+    line-height: 1.22;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.022em;
+    color: var(--black);
+  }
+  .synthesis {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .synthesis strong { color: var(--black); font-weight: 600; }
+
+  /* PRIORITIES — top of brief */
+  .priorities {
+    background: var(--paper);
+    border: 2px solid var(--black);
+    padding: 22px 26px;
+    margin: 0 0 36px 0;
+    border-radius: 5px;
+  }
+  .priorities h3 {
+    margin: 0 0 4px 0;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .priorities .priorities-sub {
+    font-size: 12px;
+    color: var(--grey);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .priority-row {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+    padding: 16px 0;
+    border-top: 1px solid var(--page);
+    align-items: baseline;
+    font-size: 14px;
+  }
+  .priority-row:first-of-type { border-top: 1px solid var(--page); padding-top: 16px; }
+  .priority-rank {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--purple-2);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .priority-rank.skip {
+    color: var(--light-grey);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 6px;
+  }
+  .priority-title strong { display: block; font-weight: 600; margin-bottom: 6px; color: var(--black); letter-spacing: -0.005em; font-size: 14.5px; }
+  .priority-title .sub { font-size: 12.5px; color: var(--grey); font-weight: 500; line-height: 1.5; }
+  .priority-title .sub .tag {
+    display: inline-block;
+    color: var(--purple-2);
+    font-weight: 600;
+  }
+  .priority-title .sub .count {
+    display: inline-block;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .priority-cta {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--page);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+  }
+  .priority-cta .cta-helper {
+    font-size: 12px;
+    color: var(--grey);
+    font-weight: 500;
+  }
+  .priority-cta-btn {
+    display: inline-block;
+    background: var(--purple-2);
+    color: var(--paper);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    transition: background 0.15s;
+  }
+  .priority-cta-btn:hover {
+    background: var(--purple-1);
+  }
+
+  .section-rule {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--grey);
+    font-weight: 700;
+    padding: 10px 0;
+    border-top: 1px solid var(--light-grey);
+    margin-top: 32px;
+    margin-bottom: 18px;
+  }
+
+  .cluster {
+    margin-bottom: 32px;
+  }
+
+  .node {
+    margin-bottom: 18px;
+    padding: 18px 20px;
+    background: var(--page);
+    border-left: 3px solid var(--light-grey);
+    border-radius: 4px;
+  }
+  .node.top {
+    border-left-color: var(--purple-2);
+    background: var(--purple-wash);
+  }
+  .node.hot {
+    border-left-color: var(--purple-1);
+    background: var(--purple-wash);
+  }
+  .node-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.35;
+    color: var(--black);
+    letter-spacing: -0.01em;
+  }
+  .node-summary {
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.55;
+  }
+  .chips {
+    font-size: 11px;
+    color: var(--ink);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .chip {
+    background: var(--paper);
+    border: 1px solid var(--light-grey);
+    padding: 4px 9px;
+    border-radius: 3px;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .chip.score-high { background: var(--purple-2); color: var(--paper); border-color: var(--purple-2); font-weight: 600; }
+  .chip.score-med { background: var(--purple-1); color: var(--paper); border-color: var(--purple-1); font-weight: 600; }
+  .chip.score-low { background: var(--light-grey); color: var(--ink); border-color: var(--light-grey); font-weight: 600; }
+  .chip.audience { background: var(--paper); color: var(--purple-2); border-color: var(--purple-2); font-weight: 600; }
+  .chip.velocity-hot::before { content: "▲ "; color: var(--purple-2); }
+  .chip.velocity-accel::before { content: "↗ "; color: var(--purple-1); }
+  .chip.velocity-steady::before { content: "— "; color: var(--grey); }
+  .chip.velocity-cool::before { content: "↘ "; color: var(--grey); }
+
+  .analyst {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    padding-top: 12px;
+    border-top: 1px dashed var(--light-grey);
+    margin-top: 12px;
+  }
+  .analyst::before {
+    content: "Analyst note  ";
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple-2);
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .analyst strong, .analyst em {
+    color: var(--black);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .sources-line {
+    font-size: 11px;
+    color: var(--grey);
+    margin-top: 12px;
+    font-weight: 500;
+  }
+  .sources-line a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--light-grey);
+    text-underline-offset: 2px;
+  }
+  .sources-line a:hover { text-decoration-color: var(--purple-1); color: var(--purple-2); }
+
+  .cross-cluster {
+    background: var(--purple-2);
+    color: var(--paper);
+    padding: 20px 24px;
+    margin: 32px 0;
+    border-radius: 5px;
+  }
+  .cross-cluster .label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--light-grey);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .cross-cluster p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    letter-spacing: -0.005em;
+  }
+  .cross-cluster strong { color: var(--paper); font-weight: 700; }
+
+  .tail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .tail-block h4 {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--grey);
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+  .tail-item {
+    font-size: 13px;
+    margin-bottom: 12px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .tail-item strong { color: var(--black); font-weight: 600; }
+
+  .footer {
+    margin-top: 44px;
+    padding-top: 22px;
+    border-top: 2px solid var(--black);
+    font-size: 11px;
+    color: var(--grey);
+    line-height: 1.7;
+    font-weight: 500;
+  }
+  .footer a { color: var(--purple-2); text-decoration: none; font-weight: 600; }
+  .footer a:hover { text-decoration: underline; }
+  .footer .ask {
+    background: var(--purple-wash);
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    color: var(--ink);
+    font-size: 13px;
+    border-radius: 4px;
+    font-weight: 500;
+    line-height: 1.55;
+  }
+  .footer .ask strong { color: var(--purple-2); font-weight: 600; }
+
+  @media (max-width: 640px) {
+    body { padding: 0; }
+    .email { padding: 26px 22px; border-radius: 0; box-shadow: none; }
+    .tail { grid-template-columns: 1fr; }
+    .priority-row { grid-template-columns: 36px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="email">
+
+  <div class="masthead">
+    <div class="brand"><span class="mark">◆</span> Chorus Daily Brief · Audubon</div>
+    <div class="date">Thu · Apr 30 · 06:00 ET</div>
+  </div>
+
+  <div class="mockup-disclaimer">Illustrative mockup · Not based on real Audubon data</div>
+
+  <div class="hello">Good morning, Audubon Team —</div>
+
+  <!-- RECOMMENDED SEND STACK — at top -->
+  <div class="priorities">
+    <h3>Recommended send stack · Thursday</h3>
+    <div class="priorities-sub">Three picks today, each routed to a different chapter cluster of your list.</div>
+
+    <div class="priority-row">
+      <div class="priority-rank">1</div>
+      <div class="priority-title">
+        <strong>Spring migration peak alert · Bird app + chapter geography</strong>
+        <span class="sub"><span class="tag">Top pick · send today</span> · <span class="count">412,180 members matched</span> · Bird app sighting volume +340% in 48 hrs across Gulf Coast and Mississippi flyway</span>
+      </div>
+    </div>
+
+    <div class="priority-row">
+      <div class="priority-rank">2</div>
+      <div class="priority-title">
+        <strong>Sage-grouse 9th Circuit oral arguments · Western public lands</strong>
+        <span class="sub"><span class="tag">Strong #2 · send today</span> · <span class="count">187,440 members matched</span> · oral arguments in 5 days; story back in cycle</span>
+      </div>
+    </div>
+
+    <div class="priority-row">
+      <div class="priority-rank">3</div>
+      <div class="priority-title">
+        <strong>Boundary Waters HJR 140 · boreal warbler &amp; raptor habitat</strong>
+        <span class="sub"><span class="tag">Narrow match · send today</span> · <span class="count">88,720 members matched</span> · upper Midwest chapter coverage spiking</span>
+      </div>
+    </div>
+
+    <div class="priority-row">
+      <div class="priority-rank skip">Skip</div>
+      <div class="priority-title">
+        <strong>Migratory Bird Treaty Act exemption follow-up</strong>
+        <span class="sub">Comment-period coverage peaked Apr 22, story velocity dropping. No new procedural beat this week. Re-engage when DOI's response surfaces.</span>
+      </div>
+    </div>
+
+    <div class="priority-cta">
+      <span class="cta-helper">Review, edit, and ship</span>
+      <a href="#" class="priority-cta-btn">Build today's campaigns &rarr;</a>
+    </div>
+  </div>
+
+  <h1 class="lede">Three picks today: spring migration peak (Bird app signal), sage-grouse 9th Circuit, Boundary Waters habitat vote.</h1>
+
+  <div class="synthesis">
+    Migration leads today. <strong>Bird app sighting volume</strong> is up 340% along the Gulf Coast and Mississippi flyway in the last 48 hours — route the regional alert by chapter geography for your strongest send. Public lands run #2: <strong>9th Circuit oral arguments on the sage-grouse rule</strong> are five days out, putting the story back in cycle for Western chapters. <strong>Boundary Waters HJR 140</strong> closes #3 with upper Midwest chapter coverage spiking on raptor habitat angles. Skip the MBTA follow-up — coverage peaked Apr 22, velocity declining.
+  </div>
+
+  <!-- THEME 1: MIGRATION & HABITAT -->
+  <div class="section-rule">Migration &amp; Habitat · Bird app + public lands · 3 stories</div>
+  <div class="cluster">
+
+    <div class="node top">
+      <div class="node-title">Spring migration peak: Bird app sightings spike +340% across Gulf Coast and Mississippi flyway</div>
+      <div class="node-summary">Bird app member-logged sightings show the spring peak hitting four days early in the Gulf Coast and along the Mississippi flyway. Warbler, oriole, and tanager logs leading. Regional chapters in TX, LA, MS, AR, and TN are seeing the strongest activity. Cross-references against eBird data confirm the early-peak pattern is real, not a logging artifact.</div>
+      <div class="chips">
+        <span class="chip score-high">Opportunity 0.93</span>
+        <span class="chip velocity-hot">Bird app +340% / 48 hrs</span>
+        <span class="chip audience">412K members matched</span>
+        <span class="chip">Member-driven signal</span>
+      </div>
+      <div class="analyst">
+        Strongest pick today on both lift and uniqueness — this is a story your members are <em>reporting</em>, not one we read off the wire. Activation runs <em>+2.3x</em> baseline on Bird-app-engaged segments because the recipient already has the topic top-of-mind. Route the alert by chapter geography: Gulf Coast and Mississippi flyway chapters get the regional version with their state's species highlights; broader migration narrative goes to your national list. <strong>Send today</strong> — peak is happening now.
+      </div>
+      <div class="sources-line">
+        412K Bird app sighting events (last 48 hrs) · cross-referenced <a href="#">eBird</a> · <a href="#">chapter reports</a> · <a href="#">Audubon Magazine spring tracker</a>
+      </div>
+    </div>
+
+    <div class="node hot">
+      <div class="node-title">9th Circuit sets oral arguments on sage-grouse plan rollback for May 5</div>
+      <div class="node-summary">Federal appeals court schedules oral arguments on the multi-state coalition challenge to the Trump-era sage-grouse management plan rollback (case out of District of Idaho). Western state chapters most invested — Idaho, Montana, Nevada, Oregon. Audubon is a named amicus.</div>
+      <div class="chips">
+        <span class="chip score-high">Opportunity 0.86</span>
+        <span class="chip velocity-accel">31 articles / 14 hrs</span>
+        <span class="chip audience">187K members matched</span>
+        <span class="chip">5-day urgency window</span>
+      </div>
+      <div class="analyst">
+        Strong #2. Sage-grouse plus public-lands crossover concentrates in your Western-state chapter segment — 187K members with affinity in either bucket. Audubon is a named amicus, which gives the strongest possible CTA framing ("the case you helped build is in court next week"). <strong>Send today</strong> — oral arguments hit the news cycle Mon morning. Western chapter segment will over-index relative to the broader list.
+      </div>
+      <div class="sources-line">
+        31 articles · <a href="#">E&amp;E News</a> · <a href="#">Reuters Legal</a> · <a href="#">Idaho Statesman</a> · <a href="#">Oregonian</a> · <a href="#">+ 27 more</a>
+      </div>
+    </div>
+
+    <div class="node">
+      <div class="node-title">Boundary Waters HJR 140 moves to House — boreal warbler and raptor habitat at stake</div>
+      <div class="node-summary">After Senate passage Apr 16, the resolution stripping Boundary Waters Canoe Area Wilderness protections heads to the House. The wilderness sits at the southern edge of the boreal warbler breeding range; Twin Metals copper mining is at the watershed. The bird-specific framing (warbler breeding, bald eagle nesting) is the angle your audience responds to.</div>
+      <div class="chips">
+        <span class="chip score-high">Opportunity 0.74</span>
+        <span class="chip velocity-hot">62 articles / 18 hrs</span>
+        <span class="chip audience">88K members matched</span>
+        <span class="chip">House vote imminent</span>
+      </div>
+      <div class="analyst">
+        Narrow but solid match. Your upper Midwest chapter segment activates ~2x baseline on boreal habitat stories; the warbler breeding-range angle is the bird-specific framing that distinguishes your send from the broader environmental-coalition coverage. <strong>Send today</strong> — story is at peak attention. Lead with the species, follow with the policy.
+      </div>
+      <div class="sources-line">
+        62 articles · <a href="#">MPR News</a> · <a href="#">Star Tribune</a> · <a href="#">High Country News</a> · <a href="#">Outside</a> · <a href="#">+ 58 more</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- THEME 2: CLIMATE & BIRDS -->
+  <div class="section-rule">Climate &amp; Birds · Range shifts &amp; coastal birds · 2 stories</div>
+  <div class="cluster">
+
+    <div class="node hot">
+      <div class="node-title">Cornell Lab study: 47% of North American breeding birds shifted range north since 1970</div>
+      <div class="node-summary">New peer-reviewed study from Cornell's Lab of Ornithology, published this week in <em>Science</em>, quantifies the long-tail northward range shift across 47% of North American breeding birds since 1970. Mainstream science press leading; popular outlets picking up the visualization. Strong overlap with Audubon's own "Birds and Climate" report franchise.</div>
+      <div class="chips">
+        <span class="chip score-high">Opportunity 0.71</span>
+        <span class="chip velocity-accel">22 articles / 18 hrs</span>
+        <span class="chip audience">144K members matched</span>
+        <span class="chip">Visualization-rich</span>
+      </div>
+      <div class="analyst">
+        Strong fit for your climate-engaged segment, particularly members who've engaged with prior "Birds and Climate" report cycles. Coverage is in the science-media-then-popular pattern that historically drives <em>+1.6x</em> revenue. Visualization-heavy stories close at higher rates than litigation framings on your list. <strong>Send today</strong> — the science cycle is fresh.
+      </div>
+      <div class="sources-line">
+        22 articles · <a href="#">Science</a> · <a href="#">NYT Climate</a> · <a href="#">Vox</a> · <a href="#">Audubon Magazine</a> · <a href="#">+ 18 more</a>
+      </div>
+    </div>
+
+    <div class="node">
+      <div class="node-title">BLM revises wind siting guidance after raptor mortality data</div>
+      <div class="node-summary">BLM updates wind-energy siting guidance with new buffer zones around known raptor migration corridors. Trade press only; no consumer pickup yet.</div>
+      <div class="chips">
+        <span class="chip score-low">Opportunity 0.38</span>
+        <span class="chip velocity-steady">12 articles / 36 hrs</span>
+        <span class="chip">Technical · narrow</span>
+      </div>
+      <div class="analyst">
+        Hold. Your climate-engaged segment is already on the Cornell study; doubling up on climate framings the same week dilutes both. Worth keeping for a raptor-engaged narrow send next week.
+      </div>
+      <div class="sources-line">
+        12 articles · <a href="#">Greenwire</a> · <a href="#">E&amp;E News</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONNECTED STORIES -->
+  <div class="cross-cluster">
+    <span class="label">Connected stories</span>
+    <p>The <strong>Bird app migration alert</strong>, <strong>sage-grouse oral arguments</strong>, and <strong>Boundary Waters habitat vote</strong> ladder under the same audience-side narrative your members are forming today: <strong>birds need habitat, this admin is rolling it back, our science and chapters are pushing in the opposite direction</strong>. Each of today's three picks routes to a different chapter cluster — total per-member email volume stays at one. Members who engage with the migration alert today prime well for the next chapter-specific habitat send.</p>
+  </div>
+
+  <!-- THEME 3: SPECIES PROTECTION -->
+  <div class="section-rule">Species Protection · ESA &amp; coastal birds · 2 stories</div>
+  <div class="cluster">
+
+    <div class="node">
+      <div class="node-title">MBTA incidental-take rule comment period closes</div>
+      <div class="node-summary">Comment period closes on the rule reinstating the Trump-era interpretation that exempts unintentional bird kills from MBTA penalties. Major procedural milestone but covered heavily last week — coverage is fading.</div>
+      <div class="chips">
+        <span class="chip score-low">Opportunity 0.34</span>
+        <span class="chip velocity-cool">7 articles / 24 hrs</span>
+        <span class="chip">Saturated last week</span>
+      </div>
+      <div class="analyst">
+        Skip. Your MBTA-engaged segment is fatigued from last week's send cycle on this. Re-engage in 5–7 days when DOI's response surfaces or when a litigation hook reopens the cycle.
+      </div>
+      <div class="sources-line">
+        7 articles · <a href="#">E&amp;E News</a> · <a href="#">SCOTUSblog</a>
+      </div>
+    </div>
+
+    <div class="node">
+      <div class="node-title">Atlantic Coast piping plover nesting season opens — beach closure conflicts surfacing</div>
+      <div class="node-summary">Spring nesting closures take effect across NJ, NY, MA, RI shorelines. Local outlets covering early conflicts with beach-access advocates; coverage is regional and steady.</div>
+      <div class="chips">
+        <span class="chip score-low">Opportunity 0.51</span>
+        <span class="chip velocity-steady">14 articles / 28 hrs</span>
+        <span class="chip">Atlantic Coast · narrow</span>
+      </div>
+      <div class="analyst">
+        Narrow geographic match — your Atlantic-coast chapter segment. Hold for a Friday slot if you're filling more than three sends; otherwise carry to next week. The conflict-with-beach-access angle is the hook that converts on this segment, not the species framing.
+      </div>
+      <div class="sources-line">
+        14 articles · <a href="#">NJ.com</a> · <a href="#">Boston Globe</a> · <a href="#">Cape Cod Times</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WATCH / FADING -->
+  <div class="tail">
+    <div class="tail-block">
+      <h4>Watch</h4>
+      <div class="tail-item"><strong>Christmas Bird Count community-science recruitment</strong> — early seasonal warmup. Members who logged Bird app sightings this week are early-recruitment candidates for the December count.</div>
+      <div class="tail-item"><strong>Loon census timing</strong> — loon nesting peaks in May. Northern lakes chapter segment is engaged; preview send next week if April sightings hold.</div>
+      <div class="tail-item"><strong>Earth Day 2026 follow-on</strong> — momentum from regional events still feeding mid-list activation. Next breakout could come from a state-level chapter event.</div>
+    </div>
+    <div class="tail-block">
+      <h4>Fading</h4>
+      <div class="tail-item"><strong>MBTA exemption cycle</strong> — peaked Apr 22. Activation dropping; re-engage when DOI's response surfaces.</div>
+      <div class="tail-item"><strong>Earth Day primary cycle</strong> — anniversary hook closed. Hold the audience for state-level chapter event breakouts.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="ask"><strong>What's missing from this brief?</strong> What scored too high, too low? Reply and it sharpens tomorrow's picks.</div>
+    <strong>Go deeper</strong> · <a href="#">Open agent</a> — ask "what's heating up in spring migration this week" or "why did the sage-grouse story score 0.86"<br><br>
+    Chorus Daily Brief · Built for <strong>Audubon</strong> · Your member model last updated Apr 29 · <a href="#">Feedback</a> · <a href="#">Settings</a>
+  </div>
+
+</div>
+
+</body>
+</html>
