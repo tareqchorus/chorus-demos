@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Chorus Content Brief — Audubon — May 27, 2026</title>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+  :root {
+    --black: #000000;
+    --ink: #1F2937;
+    --grey: #6D6D6D;
+    --light-grey: #C2C2C2;
+    --purple-1: #9559F1;
+    --purple-2: #5B19BE;
+    --purple-wash: #F5EEFF;
+    --purple-tint: #EDE2FF;
+    --paper: #FFFFFF;
+    --page: #F4F3F6;
+    --green: #16A34A;
+    --green-wash: #F0FDF4;
+    --blue: #2563EB;
+    --blue-wash: #EFF6FF;
+  }
+
+  body {
+    margin: 0;
+    padding: 40px 20px;
+    background: var(--page);
+    font-family: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  .email {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 40px 44px 52px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04), 0 4px 16px rgba(31, 41, 55, 0.05);
+  }
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--black);
+    margin-bottom: 14px;
+  }
+  .mockup-disclaimer {
+    display: inline-block;
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 18px;
+  }
+  .brand {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .brand .mark {
+    color: var(--purple-1);
+    font-size: 13px;
+    vertical-align: -1px;
+  }
+  .date {
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+  .hello {
+    font-size: 14px;
+    color: var(--grey);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  h1.lede {
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.022em;
+    color: var(--black);
+  }
+  .synthesis {
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .synthesis strong { color: var(--black); font-weight: 600; }
+
+  /* PRIORITIES */
+  .priorities {
+    background: var(--paper);
+    border: 2px solid var(--black);
+    padding: 22px 26px;
+    margin: 0 0 36px 0;
+    border-radius: 5px;
+  }
+  .priorities h3 {
+    margin: 0 0 4px 0;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .priorities .priorities-sub {
+    font-size: 12px;
+    color: var(--grey);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .priority-row {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+    padding: 16px 0;
+    border-top: 1px solid var(--page);
+    align-items: baseline;
+    font-size: 14px;
+  }
+  .priority-rank {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--purple-2);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .priority-rank.skip {
+    color: var(--light-grey);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 6px;
+  }
+  .priority-rank.gap {
+    color: var(--green);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-top: 6px;
+  }
+  .priority-title strong { display: block; font-weight: 600; margin-bottom: 6px; color: var(--black); letter-spacing: -0.005em; font-size: 14.5px; }
+  .priority-title .sub { font-size: 12.5px; color: var(--grey); font-weight: 500; line-height: 1.5; }
+  .priority-title .sub .tag {
+    display: inline-block;
+    color: var(--purple-2);
+    font-weight: 600;
+  }
+  .priority-title .sub .tag-green {
+    display: inline-block;
+    color: var(--green);
+    font-weight: 600;
+  }
+  .priority-title .sub .count {
+    display: inline-block;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .section-rule {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--grey);
+    font-weight: 700;
+    padding: 10px 0;
+    border-top: 1px solid var(--light-grey);
+    margin-top: 32px;
+    margin-bottom: 18px;
+  }
+
+  .cluster {
+    margin-bottom: 32px;
+  }
+
+  .node {
+    margin-bottom: 18px;
+    padding: 18px 20px;
+    background: var(--page);
+    border-left: 3px solid var(--light-grey);
+    border-radius: 4px;
+  }
+  .node.top {
+    border-left-color: var(--purple-2);
+    background: var(--purple-wash);
+  }
+  .node.hot {
+    border-left-color: var(--purple-1);
+    background: var(--purple-wash);
+  }
+  .node.gap-node {
+    border-left-color: var(--green);
+    background: var(--green-wash);
+  }
+  .node-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.35;
+    color: var(--black);
+    letter-spacing: -0.01em;
+  }
+  .node-summary {
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.55;
+  }
+  .chips {
+    font-size: 11px;
+    color: var(--ink);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .chip {
+    background: var(--paper);
+    border: 1px solid var(--light-grey);
+    padding: 4px 9px;
+    border-radius: 3px;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .chip.score-high { background: var(--purple-2); color: var(--paper); border-color: var(--purple-2); font-weight: 600; }
+  .chip.score-med { background: var(--purple-1); color: var(--paper); border-color: var(--purple-1); font-weight: 600; }
+  .chip.score-low { background: var(--light-grey); color: var(--ink); border-color: var(--light-grey); font-weight: 600; }
+  .chip.audience { background: var(--paper); color: var(--purple-2); border-color: var(--purple-2); font-weight: 600; }
+  .chip.gap { background: var(--paper); color: var(--green); border-color: var(--green); font-weight: 600; }
+  .chip.velocity-hot::before { content: "\25B2 "; color: var(--purple-2); }
+  .chip.velocity-accel::before { content: "\2197 "; color: var(--purple-1); }
+  .chip.velocity-steady::before { content: "\2014 "; color: var(--grey); }
+  .chip.velocity-cool::before { content: "\2198 "; color: var(--grey); }
+
+  /* AUDIENCE PORTRAIT — new component */
+  .audience-portrait {
+    background: var(--paper);
+    border: 1px solid #E5E7EB;
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    font-size: 12.5px;
+    line-height: 1.55;
+  }
+  .audience-portrait .ap-header {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple-2);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .ap-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 6px;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .ap-label {
+    font-weight: 600;
+    color: var(--ink);
+    min-width: 70px;
+    font-size: 11.5px;
+  }
+  .ap-value {
+    color: var(--grey);
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .ap-value strong { color: var(--ink); font-weight: 600; }
+  .ap-bar-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+  .ap-bar-segment {
+    height: 6px;
+    border-radius: 3px;
+  }
+  .ap-bar-legend {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 10.5px;
+    color: var(--grey);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .ap-bar-legend span::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 3px;
+    vertical-align: middle;
+  }
+
+  /* WEB PERFORMANCE — new component */
+  .web-perf {
+    background: var(--blue-wash);
+    border: 1px solid #BFDBFE;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+  .web-perf .wp-header {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .web-perf .wp-stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .web-perf .wp-stat-label { color: var(--grey); }
+  .web-perf .wp-stat-value { font-weight: 700; color: var(--ink); }
+  .web-perf .wp-note {
+    margin-top: 6px;
+    font-size: 11.5px;
+    color: var(--grey);
+    font-weight: 500;
+  }
+
+  .analyst {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    padding-top: 12px;
+    border-top: 1px dashed var(--light-grey);
+    margin-top: 12px;
+  }
+  .analyst::before {
+    content: "Recommendation  ";
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple-2);
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .analyst.gap-rec::before {
+    content: "Opportunity  ";
+    color: var(--green);
+  }
+  .analyst strong, .analyst em {
+    color: var(--black);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .sources-line {
+    font-size: 11px;
+    color: var(--grey);
+    margin-top: 12px;
+    font-weight: 500;
+  }
+  .sources-line a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--light-grey);
+    text-underline-offset: 2px;
+  }
+  .sources-line a:hover { text-decoration-color: var(--purple-1); color: var(--purple-2); }
+
+  .cross-cluster {
+    background: var(--purple-2);
+    color: var(--paper);
+    padding: 20px 24px;
+    margin: 32px 0;
+    border-radius: 5px;
+  }
+  .cross-cluster .label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--light-grey);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .cross-cluster p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    letter-spacing: -0.005em;
+  }
+  .cross-cluster strong { color: var(--paper); font-weight: 700; }
+
+  .tail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .tail-block h4 {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--grey);
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+  .tail-item {
+    font-size: 13px;
+    margin-bottom: 12px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .tail-item strong { color: var(--black); font-weight: 600; }
+
+  .footer {
+    margin-top: 44px;
+    padding-top: 22px;
+    border-top: 2px solid var(--black);
+    font-size: 11px;
+    color: var(--grey);
+    line-height: 1.7;
+    font-weight: 500;
+  }
+  .footer a { color: var(--purple-2); text-decoration: none; font-weight: 600; }
+  .footer a:hover { text-decoration: underline; }
+  .footer .ask {
+    background: var(--purple-wash);
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    color: var(--ink);
+    font-size: 13px;
+    border-radius: 4px;
+    font-weight: 500;
+    line-height: 1.55;
+  }
+  .footer .ask strong { color: var(--purple-2); font-weight: 600; }
+
+  @media (max-width: 640px) {
+    body { padding: 0; }
+    .email { padding: 26px 22px; border-radius: 0; box-shadow: none; }
+    .tail { grid-template-columns: 1fr; }
+    .priority-row { grid-template-columns: 36px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="email">
+
+  <div class="masthead">
+    <div class="brand"><span class="mark">&#9670;</span> Chorus Content Brief &middot; Audubon</div>
+    <div class="date">Tue &middot; May 27 &middot; 06:00 ET</div>
+  </div>
+
+  <div class="mockup-disclaimer">Illustrative mockup &middot; Not based on real Audubon data</div>
+
+  <div class="hello">Good morning, Audubon Team &mdash;</div>
+
+  <!-- CONTENT PRIORITIES -->
+  <div class="priorities">
+    <h3>Content priorities &middot; Tuesday</h3>
+    <div class="priorities-sub">What to write about, feature, and skip today &mdash; ranked by your audience data and web performance.</div>
+
+    <div class="priority-row">
+      <div class="priority-rank">1</div>
+      <div class="priority-title">
+        <strong>Farm Bill &mdash; Senate markup this week, your article is outperforming</strong>
+        <span class="sub"><span class="tag">Amplify &middot; feature prominently</span> &middot; <span class="count">890K members interested (42%)</span> &middot; your May 15 article has 3.6x your average article traffic &middot; action campaign already live</span>
+      </div>
+    </div>
+
+    <div class="priority-row">
+      <div class="priority-rank">2</div>
+      <div class="priority-title">
+        <strong>Sage-grouse &mdash; BLM plan implementation updates since your May 12 article</strong>
+        <span class="sub"><span class="tag">Update &middot; write follow-up</span> &middot; <span class="count">340K members interested (16%)</span> &middot; Western chapters concentrated &middot; new state-level waiver applications surfacing</span>
+      </div>
+    </div>
+
+    <div class="priority-row">
+      <div class="priority-rank gap">Gap</div>
+      <div class="priority-title">
+        <strong>Emperor Penguin endangered listing &mdash; you haven't covered this yet</strong>
+        <span class="sub"><span class="tag-green">Editorial gap &middot; write today</span> &middot; <span class="count">520K climate-engaged members (25%)</span> &middot; BirdLife broke it Apr 9 &middot; 28 outlets covered &middot; no Audubon article</span>
+      </div>
+    </div>
+
+    <div class="priority-row">
+      <div class="priority-rank skip">Skip</div>
+      <div class="priority-title">
+        <strong>Good Neighbor Authority &mdash; technical forest policy, narrow audience</strong>
+        <span class="sub">Your May 12 article has low traffic relative to site average. Audience match concentrated in a small forestry-engaged segment. Hold for policy blog.</span>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="lede">Farm Bill leads: amplify what's already working. Sage-grouse needs a follow-up. Emperor Penguin is a gap you should fill.</h1>
+
+  <div class="synthesis">
+    Your <strong>Farm Bill article</strong> (May 15) is outperforming at 3.6x your average article traffic and feeding your active action campaign. Senate markup this week gives you a reason to update and feature it prominently. <strong>Sage-grouse</strong> (May 12) has new developments worth a follow-up &mdash; state-level waiver applications are surfacing and your Western chapters are the most engaged segment on this topic. The <strong>Emperor Penguin endangered listing</strong> is an editorial gap: 28 outlets have covered it since BirdLife's announcement, your climate-engaged members would respond, and you have no article up. Skip the Good Neighbor Authority piece &mdash; narrow audience, low web traffic.
+  </div>
+
+  <!-- STORY 1: FARM BILL -->
+  <div class="section-rule">Policy &amp; Working Lands &middot; Farm Bill &middot; Amplify</div>
+  <div class="cluster">
+
+    <div class="node top">
+      <div class="node-title">Farm Bill: Senate Agriculture Committee markup begins this week &mdash; your article is already driving action</div>
+      <div class="node-summary">The House passed the Farm, Food, and National Security Act of 2026 in late April. Your May 15 analysis by Ari Perlmutter is the most-read policy article on your site this month. Senate Agriculture Committee markup begins this week, giving you a news hook to update the piece and drive a second wave of traffic to your active action campaign. Grassland birds have declined 43% and forest birds 17% over 50 years &mdash; the Farm Bill's Conservation Reserve Program reauthorization through 2031 is the policy lever.</div>
+
+      <div class="chips">
+        <span class="chip velocity-accel">41 articles / 3 days</span>
+        <span class="chip audience">890K members interested</span>
+        <span class="chip">Action campaign live</span>
+      </div>
+
+      <div class="audience-portrait">
+        <div class="ap-header">Your audience on this topic</div>
+        <div class="ap-row">
+          <span class="ap-label">Match</span>
+          <span class="ap-value"><strong>890K of 2.1M members</strong> (42% of file) have engaged with Farm Bill, working lands, or grassland bird content</span>
+        </div>
+        <div class="ap-row">
+          <span class="ap-label">Age</span>
+          <span class="ap-value">45&ndash;64 leads (<strong>38%</strong>) &middot; 25&ndash;44 strong (<strong>29%</strong>) &middot; 65+ steady (<strong>22%</strong>) &middot; under 25 (<strong>11%</strong>)</span>
+        </div>
+        <div class="ap-row">
+          <span class="ap-label">Geography</span>
+          <span class="ap-value">Nationwide &middot; over-indexes in <strong>Midwest and Plains states</strong> (IA, MN, KS, NE, SD chapters)</span>
+        </div>
+        <div class="ap-row">
+          <span class="ap-label">Giving</span>
+          <span class="ap-value">Skews toward active donors — sustainers and mid-level donors overrepresented vs. your full file</span>
+        </div>
+      </div>
+
+      <div class="web-perf">
+        <div class="wp-header">Your site &middot; existing article performance</div>
+        <div class="wp-stats">
+          <span><span class="wp-stat-label">Views (11 days)</span> <span class="wp-stat-value">11.2K</span></span>
+          <span><span class="wp-stat-label">Avg time</span> <span class="wp-stat-value">4:12</span></span>
+          <span><span class="wp-stat-label">Action page CTR</span> <span class="wp-stat-value">3.8%</span></span>
+          <span><span class="wp-stat-label">Donate CTR</span> <span class="wp-stat-value">1.2%</span></span>
+        </div>
+        <div class="wp-note">vs. site average: 3.1K views &middot; 2:45 avg time &middot; 1.1% action CTR &middot; 0.4% donate CTR</div>
+      </div>
+
+      <div class="analyst">
+        <strong>Amplify.</strong> This article is already your best-performing policy piece this month and it's feeding a live action campaign. The Senate markup this week gives you a reason to publish a follow-up or update the existing article with "what to watch in the Senate" framing. Feature prominently on your news page. Consider a homepage callout linking to the action campaign &mdash; your action page CTR on this article is 3.5x your average article CTR, which means the people who find this content are acting on it.
+      </div>
+      <div class="sources-line">
+        41 articles &middot; <a href="#">E&amp;E News</a> &middot; <a href="#">Politico Agriculture</a> &middot; <a href="#">DTN Progressive Farmer</a> &middot; <a href="#">Agri-Pulse</a> &middot; <a href="#">+ 37 more</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STORY 2: SAGE-GROUSE -->
+  <div class="section-rule">Sagebrush &amp; Public Lands &middot; Sage-grouse &middot; Update</div>
+  <div class="cluster">
+
+    <div class="node hot">
+      <div class="node-title">Sage-grouse: state-level waiver applications are surfacing &mdash; your May 12 article needs a follow-up</div>
+      <div class="node-summary">Your May 12 article by Sara Brodnax outlined the BLM's finalized Resource Management Plans across 67 million acres. Since then, the first waiver applications for energy development in priority sage-grouse habitat have been filed in Wyoming and Montana. Populations have plummeted 80% since 1965; North Dakota's last population disappeared in 2025. The story is moving from planning to implementation, which is where your readers can act.</div>
+
+      <div class="chips">
+        <span class="chip velocity-accel">18 articles / 5 days</span>
+        <span class="chip audience">340K members interested</span>
+        <span class="chip">New developments</span>
+      </div>
+
+      <div class="audience-portrait">
+        <div class="ap-header">Your audience on this topic</div>
+        <div class="ap-row">
+          <span class="ap-label">Match</span>
+          <span class="ap-value"><strong>340K of 2.1M members</strong> (16% of file) have engaged with sage-grouse, sagebrush, or Western public lands content</span>
+        </div>
+        <div class="ap-row">
+          <span class="ap-label">Age</span>
+          <span class="ap-value">55&ndash;74 leads (<strong>41%</strong>) &middot; 35&ndash;54 strong (<strong>32%</strong>) &middot; under 35 (<strong>14%</strong>) &middot; 75+ (<strong>13%</strong>)</span>
+        </div>
+        <div class="ap-row">
+          <span class="ap-label">Geography</span>
+          <span class="ap-value">Concentrated in <strong>Western states</strong>: ID, MT, NV, OR, WY, CO chapters &middot; 72% of matched members in these 6 states</span>
+        </div>
+        <div class="ap-row">
+          <span class="ap-label">Giving</span>
+          <span class="ap-value">Strong sustainer base — high-value, committed segment</span>
+        </div>
+      </div>
+
+      <div class="web-perf">
+        <div class="wp-header">Your site &middot; existing article performance</div>
+        <div class="wp-stats">
+          <span><span class="wp-stat-label">Views (15 days)</span> <span class="wp-stat-value">6.8K</span></span>
+          <span><span class="wp-stat-label">Avg time</span> <span class="wp-stat-value">5:34</span></span>
+          <span><span class="wp-stat-label">Action page CTR</span> <span class="wp-stat-value">2.1%</span></span>
+          <span><span class="wp-stat-label">Donate CTR</span> <span class="wp-stat-value">0.9%</span></span>
+        </div>
+        <div class="wp-note">vs. site average: 3.1K views &middot; 2:45 avg time &middot; 1.1% action CTR &middot; 0.4% donate CTR. Note: avg time on page is highest of any article this month &mdash; readers are engaged deeply.</div>
+      </div>
+
+      <div class="analyst">
+        <strong>Write a follow-up.</strong> Your original article laid the policy groundwork; the story has moved to implementation. A follow-up covering the first waiver applications gives your Western chapter members something concrete to act on. The audience is concentrated (72% in 6 states) and high-value (38% sustainers). Time on page for your original article is the highest this month &mdash; this audience reads deeply, not casually. Frame the follow-up around "what to watch for in your state" to activate the chapter-level connection.
+      </div>
+      <div class="sources-line">
+        18 articles &middot; <a href="#">E&amp;E News</a> &middot; <a href="#">Wyoming Tribune Eagle</a> &middot; <a href="#">Montana Free Press</a> &middot; <a href="#">High Country News</a> &middot; <a href="#">+ 14 more</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STORY 3: EDITORIAL GAP -->
+  <div class="section-rule">Climate &amp; Species &middot; Emperor Penguin &middot; Editorial Gap</div>
+  <div class="cluster">
+
+    <div class="node gap-node">
+      <div class="node-title">Emperor Penguin listed as Endangered &mdash; 28 outlets covered it, Audubon hasn't</div>
+      <div class="node-summary">BirdLife International announced on April 9 that the Emperor Penguin has been uplisted from Near Threatened to Endangered on the IUCN Red List, driven by climate-linked sea ice loss. Projections show the population could halve by the 2080s. Coverage spanned BBC, Guardian, Nature, and major science outlets. Your climate-engaged members have strong affinity for charismatic-species-plus-climate framing, and Audubon has published no response.</div>
+
+      <div class="chips">
+        <span class="chip gap">Editorial gap</span>
+        <span class="chip velocity-steady">28 articles / 7 weeks</span>
+        <span class="chip audience">520K climate-engaged members</span>
+      </div>
+
+      <div class="audience-portrait">
+        <div class="ap-header">Your audience on this topic</div>
+        <div class="ap-row">
+          <span class="ap-label">Match</span>
+          <span class="ap-value"><strong>520K of 2.1M members</strong> (25% of file) engage with climate-and-birds or endangered species content</span>
+        </div>
+        <div class="ap-row">
+          <span class="ap-label">Age</span>
+          <span class="ap-value">25&ndash;44 leads (<strong>36%</strong>) &middot; 45&ndash;64 strong (<strong>30%</strong>) &middot; under 25 growing (<strong>18%</strong>) &middot; 65+ (<strong>16%</strong>)</span>
+        </div>
+        <div class="ap-row">
+          <span class="ap-label">Geography</span>
+          <span class="ap-value">Nationwide &middot; slight over-index in <strong>coastal and urban chapters</strong> (NY, CA, MA, WA, IL)</span>
+        </div>
+        <div class="ap-row">
+          <span class="ap-label">Giving</span>
+          <span class="ap-value">Highest non-donor share of any topic today — stronger for acquisition than revenue. This segment skews 15 years younger than your sage-grouse audience.</span>
+        </div>
+      </div>
+
+      <div class="analyst gap-rec">
+        <strong>Fill this gap.</strong> Emperor Penguin is the kind of story your climate-engaged audience expects Audubon to cover. The listing happened 7 weeks ago &mdash; Audubon's silence is noticeable to anyone following bird conservation. Write a short article connecting the listing to your "Birds and Climate" research franchise. This segment is younger and has the highest non-donor concentration in your file &mdash; strong acquisition content for new email signups from organic search. The story is no longer breaking news, so frame as analysis: "what the Emperor Penguin listing tells us about the future of seabirds."
+      </div>
+      <div class="sources-line">
+        28 articles &middot; <a href="#">BirdLife International</a> &middot; <a href="#">BBC</a> &middot; <a href="#">The Guardian</a> &middot; <a href="#">Nature</a> &middot; <a href="#">+ 24 more</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STORY 4: GREAT SALT LAKE -->
+  <div class="section-rule">Western Water &middot; Great Salt Lake &middot; Monitor</div>
+  <div class="cluster">
+
+    <div class="node">
+      <div class="node-title">Great Salt Lake ecosystem restoration &mdash; new federal report, your article is fresh</div>
+      <div class="node-summary">Your May 20 article covers a new federal report providing background and potential solutions for challenges at Great Salt Lake. The lake is critical habitat for Wilson's phalarope and millions of migratory shorebirds. Coverage is in the policy-then-regional pattern. Your article is only 7 days old &mdash; monitor performance before deciding whether to amplify.</div>
+
+      <div class="chips">
+        <span class="chip velocity-steady">15 articles / 10 days</span>
+        <span class="chip audience">180K members interested</span>
+        <span class="chip">Western water &middot; regional</span>
+      </div>
+
+      <div class="audience-portrait">
+        <div class="ap-header">Your audience on this topic</div>
+        <div class="ap-row">
+          <span class="ap-label">Match</span>
+          <span class="ap-value"><strong>180K members</strong> (9% of file) engage with Western water, saline lakes, or shorebird content</span>
+        </div>
+        <div class="ap-row">
+          <span class="ap-label">Geography</span>
+          <span class="ap-value">Concentrated in <strong>UT, NV, ID, CO</strong> chapters &middot; 65% of matched members in the Interior West</span>
+        </div>
+      </div>
+
+      <div class="web-perf">
+        <div class="wp-header">Your site &middot; existing article performance (early)</div>
+        <div class="wp-stats">
+          <span><span class="wp-stat-label">Views (7 days)</span> <span class="wp-stat-value">2.9K</span></span>
+          <span><span class="wp-stat-label">Avg time</span> <span class="wp-stat-value">3:18</span></span>
+          <span><span class="wp-stat-label">Action page CTR</span> <span class="wp-stat-value">0.8%</span></span>
+          <span><span class="wp-stat-label">Donate CTR</span> <span class="wp-stat-value">0.3%</span></span>
+        </div>
+        <div class="wp-note">Tracking slightly below site average. Early &mdash; check again in 7 days. Regional stories often spike on second-wave local outlet pickup.</div>
+      </div>
+
+      <div class="analyst">
+        <strong>Monitor.</strong> Your article is fresh and tracking close to average. Don't amplify yet &mdash; let it find its natural audience. If a Senate hearing or state legislative action creates a second news hook, that's the moment to feature prominently and pair with your cooperative watershed management action campaign.
+      </div>
+      <div class="sources-line">
+        15 articles &middot; <a href="#">Salt Lake Tribune</a> &middot; <a href="#">Deseret News</a> &middot; <a href="#">E&amp;E News</a> &middot; <a href="#">+ 12 more</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONNECTED STORIES -->
+  <div class="cross-cluster">
+    <span class="label">Editorial throughline</span>
+    <p>Three of today's four stories share a thread your audience is forming: <strong>federal conservation policy is moving fast this month</strong> (Farm Bill, sage-grouse implementation, Great Salt Lake federal report), and your site should reflect that urgency. The Emperor Penguin gap is the climate complement &mdash; it gives your younger, coastal audience something to engage with while your policy-heavy readers follow the legislative calendar. Together, these four topics cover <strong>82% of your engaged file</strong> across different demographics and geographies without overlapping segments.</p>
+  </div>
+
+  <!-- SKIP / DEPRIORITIZE -->
+  <div class="section-rule">Deprioritize &middot; 2 stories</div>
+  <div class="cluster">
+
+    <div class="node">
+      <div class="node-title">Good Neighbor Authority &mdash; technical forest policy, narrow reach</div>
+      <div class="chips">
+        <span class="chip velocity-cool">4 articles / 14 days</span>
+        <span class="chip">62K members interested</span>
+      </div>
+      <div class="analyst">
+        Keep on the news page but don't feature. 62K members (3% of file) engage with forestry management content. Article is performing below average on all web metrics. Better suited for your policy blog or a chapter-specific newsletter to forestry-engaged members in Pacific NW and Appalachian chapters.
+      </div>
+    </div>
+
+    <div class="node">
+      <div class="node-title">Congressional Review Act and public lands management</div>
+      <div class="chips">
+        <span class="chip velocity-cool">8 articles / 14 days</span>
+        <span class="chip">95K members interested</span>
+      </div>
+      <div class="analyst">
+        Substantive policy analysis but abstract framing. Your public-lands audience (which overlaps heavily with sage-grouse) will find the sage-grouse follow-up more actionable. Hold this as background context for future CRA-specific legislative moments.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WATCH / FADING -->
+  <div class="tail">
+    <div class="tail-block">
+      <h4>Watch</h4>
+      <div class="tail-item"><strong>Fix Our Forests Act</strong> &mdash; American Bird Conservancy is covering the threat to Northern Spotted Owl and Marbled Murrelet habitat. Audubon hasn't weighed in. Monitor for committee action; if it advances, this becomes another editorial gap to fill.</div>
+      <div class="tail-item"><strong>Migratory Bird Protection Act</strong> &mdash; active on your action page but no recent news article. If a Senate co-sponsor is added or a markup is scheduled, that's your hook to write and amplify.</div>
+    </div>
+    <div class="tail-block">
+      <h4>Fading</h4>
+      <div class="tail-item"><strong>Rachel Carson Award / Kolbert</strong> &mdash; institutional event coverage. Traffic peaked day-of. No further editorial action needed.</div>
+      <div class="tail-item"><strong>Bird-friendly architecture</strong> &mdash; evergreen topic with steady low traffic. Not timely enough to feature this week.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="ask"><strong>What's missing from this brief?</strong> What scored too high, too low? Should a topic be covered that we didn't flag? Reply and it sharpens tomorrow's priorities.</div>
+    <strong>Go deeper</strong> &middot; <a href="#">Open agent</a> &mdash; ask "which topics drive the most donation page clicks" or "show me the under-35 audience breakdown for climate content"<br><br>
+    Chorus Content Brief &middot; Built for <strong>Audubon</strong> &middot; Your audience model last updated May 26 &middot; <a href="#">Feedback</a> &middot; <a href="#">Settings</a>
+  </div>
+
+</div>
+
+</body>
+</html>

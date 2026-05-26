@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>How It Works — Chorus for Audubon</title>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<style>
+  :root {
+    --black: #000000;
+    --ink: #1F2937;
+    --grey: #6D6D6D;
+    --light-grey: #C2C2C2;
+    --purple-1: #9559F1;
+    --purple-2: #5B19BE;
+    --purple-wash: #F5EEFF;
+    --purple-tint: #EDE2FF;
+    --paper: #FFFFFF;
+    --page: #F4F3F6;
+    --green: #16A34A;
+    --green-wash: #F0FDF4;
+    --blue: #2563EB;
+    --blue-wash: #EFF6FF;
+    --amber: #D97706;
+    --amber-wash: #FFFBEB;
+  }
+
+  body {
+    margin: 0;
+    padding: 40px 20px;
+    background: var(--page);
+    font-family: 'Inter Display', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 48px 52px 56px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04), 0 4px 16px rgba(31, 41, 55, 0.05);
+  }
+
+  /* HEADER */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--black);
+    margin-bottom: 14px;
+  }
+  .brand {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .brand .mark {
+    color: var(--purple-1);
+    font-size: 13px;
+    vertical-align: -1px;
+  }
+  .internal-tag {
+    display: inline-block;
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 18px;
+  }
+  .subtitle {
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+  h1 {
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.022em;
+    color: var(--black);
+  }
+  .page-sub {
+    font-size: 14px;
+    color: var(--grey);
+    margin-bottom: 36px;
+    line-height: 1.5;
+  }
+
+  /* FLOW DIAGRAM */
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 40px;
+  }
+
+  /* FLOW LAYER */
+  .flow-layer {
+    position: relative;
+  }
+  .flow-layer-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 12px;
+  }
+  .flow-cards {
+    display: grid;
+    gap: 12px;
+  }
+  .flow-cards.three-col { grid-template-columns: 1fr 1fr 1fr; }
+  .flow-cards.one-col { grid-template-columns: 1fr; }
+
+  .flow-card {
+    border: 1.5px solid var(--light-grey);
+    border-radius: 6px;
+    padding: 18px 20px;
+    background: var(--paper);
+  }
+  .flow-card h3 {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: -0.01em;
+  }
+  .flow-card p {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--grey);
+    line-height: 1.5;
+  }
+  .flow-card .data-point {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--purple-2);
+    background: var(--purple-wash);
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-top: 8px;
+  }
+
+  /* CHORUS LAYER — the centerpiece */
+  .chorus-layer {
+    border: 2px solid var(--purple-2);
+    border-radius: 8px;
+    padding: 28px 28px 24px;
+    background: var(--purple-wash);
+  }
+  .chorus-layer .flow-layer-label {
+    color: var(--purple-2);
+  }
+  .chorus-layer .flow-card {
+    border-color: var(--purple-tint);
+    background: var(--paper);
+  }
+  .chorus-layer .flow-card h3 {
+    color: var(--purple-2);
+  }
+
+  /* OUTPUT LAYER */
+  .output-card {
+    border-color: var(--black);
+    border-width: 2px;
+  }
+  .output-card h3 { color: var(--black); }
+
+  /* GREEN CARDS (feedback) */
+  .feedback-card {
+    border-color: var(--green);
+    background: var(--green-wash);
+  }
+  .feedback-card h3 { color: var(--green); }
+
+  /* CONNECTORS */
+  .connector {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  .connector svg {
+    display: block;
+  }
+
+  /* CONNECTOR WITH LABEL */
+  .connector-labeled {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 0;
+  }
+  .connector-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--light-grey);
+  }
+
+  /* AUDUBON SPECIFIC SECTION */
+  .audubon-context {
+    margin-top: 44px;
+    padding-top: 32px;
+    border-top: 2px solid var(--black);
+  }
+  .audubon-context h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+    margin: 0 0 6px 0;
+    letter-spacing: -0.01em;
+  }
+  .audubon-context .context-sub {
+    font-size: 13px;
+    color: var(--grey);
+    margin-bottom: 20px;
+  }
+  .integration-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .integration-item {
+    border: 1.5px solid var(--light-grey);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+  .integration-item h4 {
+    margin: 0 0 4px 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--black);
+  }
+  .integration-item p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--grey);
+    line-height: 1.45;
+  }
+  .integration-item .integration-status {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-top: 8px;
+  }
+  .status-confirmed {
+    background: var(--green-wash);
+    color: var(--green);
+  }
+  .status-likely {
+    background: var(--blue-wash);
+    color: var(--blue);
+  }
+  .status-tbd {
+    background: var(--amber-wash);
+    color: var(--amber);
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--page);
+    font-size: 11px;
+    color: var(--light-grey);
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="masthead">
+    <div class="brand"><span class="mark">●</span> CHORUS</div>
+    <div class="subtitle">How It Works</div>
+  </div>
+
+  <h1>From raw signals to editorial decisions</h1>
+  <p class="page-sub">Chorus connects three data sources your team already has, layers audience intelligence on top, and delivers a daily content brief with ranked recommendations. The system learns from what your audience does next.</p>
+
+  <!-- === FLOW DIAGRAM === -->
+  <div class="flow">
+
+    <!-- INPUTS -->
+    <div class="flow-layer">
+      <div class="flow-layer-label">Data inputs</div>
+      <div class="flow-cards three-col">
+
+        <div class="flow-card">
+          <h3>News monitoring</h3>
+          <p>Global news, policy, and science coverage relevant to your mission areas. Filtered from the full firehose to your topic universe.</p>
+          <span class="data-point">150K+ articles/day scanned</span>
+        </div>
+
+        <div class="flow-card">
+          <h3>Member &amp; supporter data</h3>
+          <p>Your existing supporter records from Snowflake: engagement history, giving patterns, email response data, chapter affiliations, interest signals.</p>
+          <span class="data-point">Your Snowflake warehouse</span>
+        </div>
+
+        <div class="flow-card">
+          <h3>Web analytics</h3>
+          <p>Page-level performance from audubon.org: article views, time on page, action-page click-through, donate-page click-through, bounce rates.</p>
+          <span class="data-point">GA4 or equivalent</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CONNECTOR: DOWN -->
+    <div class="connector">
+      <svg width="24" height="32" viewBox="0 0 24 32">
+        <line x1="12" y1="0" x2="12" y2="24" stroke="#C2C2C2" stroke-width="2"/>
+        <polygon points="6,24 18,24 12,32" fill="#C2C2C2"/>
+      </svg>
+    </div>
+
+    <!-- CHORUS INTELLIGENCE LAYER -->
+    <div class="flow-layer chorus-layer">
+      <div class="flow-layer-label">Chorus intelligence layer</div>
+      <div class="flow-cards three-col">
+
+        <div class="flow-card">
+          <h3>Audience preference modeling</h3>
+          <p>Per-supporter content profiles aggregated into segment portraits. Which topics, framings, and formats resonate with which parts of your audience, broken down by demographics and giving behavior.</p>
+        </div>
+
+        <div class="flow-card">
+          <h3>Relevance scoring</h3>
+          <p>Every incoming news story scored against your mission areas, current campaigns, and audience interest patterns. Stories ranked by how much of your audience they activate.</p>
+        </div>
+
+        <div class="flow-card">
+          <h3>Performance prediction</h3>
+          <p>Historical web and email performance data combined with audience profiles to predict which content will drive engagement, action-page visits, and donations from each segment.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CONNECTOR: DOWN -->
+    <div class="connector">
+      <svg width="24" height="32" viewBox="0 0 24 32">
+        <line x1="12" y1="0" x2="12" y2="24" stroke="#5B19BE" stroke-width="2"/>
+        <polygon points="6,24 18,24 12,32" fill="#5B19BE"/>
+      </svg>
+    </div>
+
+    <!-- OUTPUT -->
+    <div class="flow-layer">
+      <div class="flow-layer-label">Daily output</div>
+      <div class="flow-cards one-col">
+        <div class="flow-card output-card">
+          <h3>Content brief</h3>
+          <p>Delivered each morning. Ranked stories with action recommendations (Amplify, Update, Gap, Skip). Each story includes audience segment portraits, web performance data for published articles, and editorial gap detection for stories you should cover but haven't yet. One page. Takes 5 minutes to read.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONNECTOR: BRANCHES -->
+    <div class="connector">
+      <svg width="400" height="32" viewBox="0 0 400 32">
+        <line x1="200" y1="0" x2="200" y2="12" stroke="#1F2937" stroke-width="2"/>
+        <line x1="67" y1="12" x2="333" y2="12" stroke="#1F2937" stroke-width="2"/>
+        <line x1="67" y1="12" x2="67" y2="24" stroke="#1F2937" stroke-width="2"/>
+        <line x1="200" y1="12" x2="200" y2="24" stroke="#1F2937" stroke-width="2"/>
+        <line x1="333" y1="12" x2="333" y2="24" stroke="#1F2937" stroke-width="2"/>
+        <polygon points="61,24 73,24 67,32" fill="#1F2937"/>
+        <polygon points="194,24 206,24 200,32" fill="#1F2937"/>
+        <polygon points="327,24 339,24 333,32" fill="#1F2937"/>
+      </svg>
+    </div>
+
+    <!-- DECISIONS -->
+    <div class="flow-layer">
+      <div class="flow-layer-label">Team actions</div>
+      <div class="flow-cards three-col">
+
+        <div class="flow-card output-card">
+          <h3>Editorial decisions</h3>
+          <p>Which stories your communications team should write about today, based on audience interest and mission alignment. Replaces guesswork with data.</p>
+        </div>
+
+        <div class="flow-card output-card">
+          <h3>Placement decisions</h3>
+          <p>Which published articles to feature on your homepage, news page, and action pages. Prioritized by web performance and audience segment match.</p>
+        </div>
+
+        <div class="flow-card output-card">
+          <h3>Email campaign decisions</h3>
+          <p>Which content to send to which segments, with framing and format recommendations tuned to each audience group's demonstrated preferences.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CONNECTOR: FEEDBACK LOOP -->
+    <div class="connector-labeled">
+      <svg width="24" height="20" viewBox="0 0 24 20">
+        <line x1="12" y1="0" x2="12" y2="12" stroke="#16A34A" stroke-width="2"/>
+        <polygon points="6,12 18,12 12,20" fill="#16A34A"/>
+      </svg>
+      <span class="connector-label">Results feed back</span>
+      <svg width="24" height="20" viewBox="0 0 24 20">
+        <line x1="12" y1="0" x2="12" y2="12" stroke="#16A34A" stroke-width="2"/>
+        <polygon points="6,12 18,12 12,20" fill="#16A34A"/>
+      </svg>
+    </div>
+
+    <!-- FEEDBACK -->
+    <div class="flow-layer">
+      <div class="flow-layer-label">Learning loop</div>
+      <div class="flow-cards one-col">
+        <div class="flow-card feedback-card">
+          <h3>Engagement data feeds back into the model</h3>
+          <p>Opens, clicks, donations, page views, action-page conversions, and time-on-page all feed back into the audience preference model and performance predictions. The system gets sharper over time. Recommendations in month 6 are meaningfully better than month 1.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- === END FLOW DIAGRAM === -->
+
+
+  <!-- === AUDUBON INTEGRATION CONTEXT === -->
+  <div class="audubon-context">
+    <h2>For Audubon: what connects where</h2>
+    <p class="context-sub">Based on what we know about your current stack.</p>
+
+    <div class="integration-grid">
+
+      <div class="integration-item">
+        <h4>Snowflake</h4>
+        <p>Your data warehouse. Supporter records, engagement history, giving data. This is our primary integration point for audience modeling.</p>
+        <span class="integration-status status-confirmed">Confirmed</span>
+      </div>
+
+      <div class="integration-item">
+        <h4>Salesforce + EveryAction</h4>
+        <p>CRM and advocacy platform. Supporter profiles flow through here into Snowflake. We connect downstream via Snowflake, not directly.</p>
+        <span class="integration-status status-confirmed">Confirmed</span>
+      </div>
+
+      <div class="integration-item">
+        <h4>Sigma BI</h4>
+        <p>Your business intelligence layer on top of Snowflake. Chorus supplements Sigma with audience preference intelligence that sits outside traditional BI.</p>
+        <span class="integration-status status-confirmed">Confirmed</span>
+      </div>
+
+      <div class="integration-item">
+        <h4>Web analytics (GA4)</h4>
+        <p>Page-level performance data from audubon.org. Needed to connect content performance to audience segments. Platform TBD.</p>
+        <span class="integration-status status-tbd">To confirm</span>
+      </div>
+
+      <div class="integration-item">
+        <h4>Audubon Bird Guide app</h4>
+        <p>Sighting data as a content signal. Pat proposed this as a way to surface regional interest patterns ("here's the latest sighting in your area"). Future integration.</p>
+        <span class="integration-status status-likely">Proposed by Pat</span>
+      </div>
+
+      <div class="integration-item">
+        <h4>Email platform</h4>
+        <p>Whichever system sends your fundraising and advocacy emails. Response data (opens, clicks, conversions) is a critical feedback signal. Platform TBD.</p>
+        <span class="integration-status status-tbd">To confirm</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Chorus</span>
+    <span>May 2026</span>
+  </div>
+
+</div>
+
+</body>
+</html>
