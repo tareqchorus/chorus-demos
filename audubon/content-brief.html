@@ -787,5 +787,30 @@
 
 </div>
 
+<div id="gate" style="position:fixed;inset:0;z-index:9999;background:#F4F3F6;display:flex;align-items:center;justify-content:center;font-family:'Inter Display','Inter',-apple-system,sans-serif;">
+  <div style="text-align:center;">
+    <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;margin-bottom:24px;color:#000;">
+      <span style="color:#9559F1;font-size:13px;vertical-align:-1px;">&#9670;</span> Chorus
+    </div>
+    <input id="gate-pw" type="password" placeholder="Password" autofocus
+      style="font-family:inherit;font-size:15px;padding:12px 20px;border:1.5px solid #C2C2C2;border-radius:6px;outline:none;width:240px;text-align:center;"
+      onfocus="this.style.borderColor='#9559F1'" onblur="this.style.borderColor='#C2C2C2'">
+    <div id="gate-err" style="color:#DC2626;font-size:12px;margin-top:10px;height:16px;"></div>
+  </div>
+</div>
+<script>
+document.querySelector('.email').style.display='none';
+document.getElementById('gate-pw').addEventListener('keydown',function(e){
+  if(e.key==='Enter'){
+    if(this.value==='chorusdemo'){
+      document.getElementById('gate').remove();
+      document.querySelector('.email').style.display='';
+    } else {
+      document.getElementById('gate-err').textContent='Incorrect password';
+      this.value='';
+    }
+  }
+});
+</script>
 </body>
 </html>
